@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfoao5tykndc1"]
+
+[ext_resource type="PackedScene" uid="uid://b7a3xn18lg55u" path="res://Scenes/Terrain/Tambora/tambora_hiking_trail.tscn" id="1_trail"]
+[ext_resource type="Script" uid="uid://duif33ddtbmal" path="res://Tests/Terrain3D/test_tambora_hiking_trail_editor.gd" id="2_test_script"]
+
+[sub_resource type="Environment" id="1_env"]
+background_mode = 1
+background_color = Color(0.4, 0.6, 0.8, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.3, 0.4, 0.5, 1)
+ambient_light_energy = 0.3
+
+[node name="TamboraHikingTrailTest" type="Node3D"]
+script = ExtResource("2_test_script")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("1_env")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, 0.25, 0.866025, 0.433012, 0.433012, -0.5, 0.75, 0, 10, 0)
+light_energy = 1.5
+
+[node name="TamboraTrail" parent="." instance=ExtResource("1_trail")]
+
+[node name="TestCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 100)
+current = true
+fov = 60.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TestPanel" type="Panel" parent="UI"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 450.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TestPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Tambora Hiking Trail Test"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test Trail Generation"
+
+[node name="Button2" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test Asset Placement"
+
+[node name="Button3" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test Position Activation"
+
+[node name="Button4" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Show Asset Statistics"
+
+[node name="Button5" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "🔧 Debug Test"
+
+[node name="Button6" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "📷 Ground View"
+
+[node name="Button7" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "📷 Wide View"
+
+[node name="Button8" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "🧪 Test PSX Asset"
+
+[node name="Button9" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "🎯 Test Advanced Algorithms"
+
+[node name="Button10" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "🧹 Clear Trail"
+
+[node name="Button11" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "🧹 Clear All"
+
+[node name="HSeparator2" type="HSeparator" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="UI/TestPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Test Results:"
+vertical_alignment = 1
+
+[node name="ResultsLabel" type="Label" parent="UI/TestPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Ready to test..."
+vertical_alignment = 1
+autowrap_mode = 2

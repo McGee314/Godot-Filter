@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Systems/Camera/CameraSceneConfig.gd" id="1_scene_config"]
+
+[resource]
+script = ExtResource("1_scene_config")
+scene_name = "Simple Test Scene"
+scene_description = "Simple camera configuration for testing"
+default_view_index = 0
+views = []
+

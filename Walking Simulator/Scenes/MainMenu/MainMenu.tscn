@@ -1,0 +1,545 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqx8v2n3k4m5p"]
+
+[ext_resource type="Script" uid="uid://crksv6vvneuou" path="res://Scenes/MainMenu/MainMenuController.gd" id="1_controller"]
+[ext_resource type="Texture2D" uid="uid://c24g0ljkihtmp" path="res://Assets/Images/indonesia.svg" id="2_indonesia_map"]
+[ext_resource type="PackedScene" uid="uid://dcnbyfdxwuaur" path="res://Scenes/MainMenu/Indonesia3DMap.tscn" id="3_3d_map"]
+[ext_resource type="PackedScene" uid="uid://dlvk0ihlw5vm2" path="res://Scenes/MainMenu/Indonesia3DMapFinal.tscn" id="4_3d_map_final"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_controller")
+indonesia_3d_map_scene = ExtResource("3_3d_map")
+indonesia_3d_map_final_scene = ExtResource("4_3d_map_final")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 1)
+
+[node name="MainMenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="MainMenuContainer"]
+layout_mode = 2
+text = "Indonesian Cultural Heritage Exhibition"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="MainMenuContainer"]
+layout_mode = 2
+text = "International Seminar on Indonesian Cultural Diversity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainMenuContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MainButtons" type="VBoxContainer" parent="MainMenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Start Game"
+
+[node name="Explore3DMapButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Explore 3D Map"
+
+[node name="EthnicitDetectionButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Ethnic Detection
+"
+
+[node name="TopengNusantaraButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Topeng Nusantara"
+
+[node name="LoadGameButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Load Game"
+
+[node name="HowToPlayButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "How to Play"
+
+[node name="AboutUsButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "About Us"
+
+[node name="CreditsButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="MainMenuContainer/MainButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Exit Game"
+
+[node name="HSeparator2" type="HSeparator" parent="MainMenuContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="InstructionsLabel" type="Label" parent="MainMenuContainer"]
+layout_mode = 2
+text = "Explore Indonesian cultural heritage through interactive experiences"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameSubmenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubmenuBackground" type="ColorRect" parent="StartGameSubmenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 0.95)
+
+[node name="SubmenuContainer" type="VBoxContainer" parent="StartGameSubmenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubmenuTitle" type="Label" parent="StartGameSubmenu/SubmenuContainer"]
+layout_mode = 2
+text = "Choose Your Region"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubmenuSubtitle" type="Label" parent="StartGameSubmenu/SubmenuContainer"]
+layout_mode = 2
+text = "Click on a region to explore Indonesian cultural heritage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="StartGameSubmenu/SubmenuContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MapContainer" type="Control" parent="StartGameSubmenu/SubmenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="IndonesiaMap" type="TextureRect" parent="StartGameSubmenu/SubmenuContainer/MapContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_indonesia_map")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MapOverlay" type="Control" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RegionHighlights" type="Control" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JavaHighlight" type="ColorRect" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay/RegionHighlights"]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 350.0
+offset_bottom = 380.0
+mouse_filter = 2
+color = Color(0.8, 0.6, 0.2, 0.3)
+
+[node name="JavaLabel" type="Label" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay/RegionHighlights/JavaHighlight"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Java
+Indonesia Barat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NusaTenggaraHighlight" type="ColorRect" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay/RegionHighlights"]
+layout_mode = 1
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 280.0
+mouse_filter = 2
+color = Color(0.6, 0.3, 0.1, 0.3)
+
+[node name="NusaTenggaraLabel" type="Label" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay/RegionHighlights/NusaTenggaraHighlight"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nusa Tenggara
+Indonesia Tengah"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PapuaHighlight" type="ColorRect" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay/RegionHighlights"]
+layout_mode = 1
+offset_left = 450.0
+offset_top = 250.0
+offset_right = 600.0
+offset_bottom = 330.0
+mouse_filter = 2
+color = Color(0.3, 0.7, 0.4, 0.3)
+
+[node name="PapuaLabel" type="Label" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap/MapOverlay/RegionHighlights/PapuaHighlight"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Papua
+Indonesia Timur"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MapTitle" type="Label" parent="StartGameSubmenu/SubmenuContainer/MapContainer/IndonesiaMap"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+text = "Indonesia Map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RegionButtons" type="Control" parent="StartGameSubmenu/SubmenuContainer/MapContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IndonesiaBaratButton" type="Button" parent="StartGameSubmenu/SubmenuContainer/MapContainer/RegionButtons"]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 350.0
+offset_bottom = 380.0
+text = "Indonesia Barat
+Traditional Market"
+
+[node name="IndonesiaTengahButton" type="Button" parent="StartGameSubmenu/SubmenuContainer/MapContainer/RegionButtons"]
+layout_mode = 1
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 280.0
+text = "Indonesia Tengah
+Mount Tambora"
+
+[node name="IndonesiaTimurButton" type="Button" parent="StartGameSubmenu/SubmenuContainer/MapContainer/RegionButtons"]
+layout_mode = 1
+offset_left = 450.0
+offset_top = 250.0
+offset_right = 600.0
+offset_bottom = 330.0
+text = "Indonesia Timur
+Papua Highlands"
+
+[node name="BackButton" type="Button" parent="StartGameSubmenu/SubmenuContainer"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
+
+[node name="HowToPlayPanel" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HowToPlayBackground" type="ColorRect" parent="HowToPlayPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 0.95)
+
+[node name="HowToPlayContainer" type="VBoxContainer" parent="HowToPlayPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HowToPlayTitle" type="Label" parent="HowToPlayPanel/HowToPlayContainer"]
+layout_mode = 2
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowToPlayContent" type="RichTextLabel" parent="HowToPlayPanel/HowToPlayContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "[b]Movement Controls:[/b]
+• WASD or Arrow Keys: Move around
+• Mouse: Look around (camera control)
+• Space: Jump
+
+[b]Interaction Controls:[/b]
+• E: Interact with NPCs and objects
+• 1-4: Select dialogue options
+• Enter: Continue dialogue
+• Escape: Cancel dialogue
+
+[b]Gameplay:[/b]
+• Explore three regions of Indonesia
+• Talk to NPCs to learn about culture
+• Collect cultural artifacts
+• Learn about Indonesian heritage
+
+[b]Navigation:[/b]
+• Use the main menu to select regions
+• Each region has unique cultural content
+• Return to main menu anytime"
+fit_content = true
+
+[node name="HowToPlayBackButton" type="Button" parent="HowToPlayPanel/HowToPlayContainer"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
+
+[node name="AboutUsPanel" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AboutUsBackground" type="ColorRect" parent="AboutUsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 0.95)
+
+[node name="AboutUsContainer" type="VBoxContainer" parent="AboutUsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AboutUsTitle" type="Label" parent="AboutUsPanel/AboutUsContainer"]
+layout_mode = 2
+text = "About Us"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AboutUsContent" type="RichTextLabel" parent="AboutUsPanel/AboutUsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "[b]Indonesian Cultural Heritage Exhibition[/b]
+
+This interactive walking simulator was created as part of the International Seminar on Indonesian Cultural Diversity. Our mission is to preserve and promote the rich cultural heritage of Indonesia through immersive digital experiences.
+
+[b]Project Goals:[/b]
+• Educate about Indonesian cultural diversity
+• Preserve traditional knowledge and customs
+• Provide interactive learning experiences
+• Showcase the beauty of Indonesian heritage
+
+[b]Regions Featured:[/b]
+• [b]Indonesia Barat:[/b] Traditional markets and cuisine
+• [b]Indonesia Tengah:[/b] Mount Tambora historical significance
+• [b]Indonesia Timur:[/b] Papua cultural artifacts and customs
+
+[b]Educational Value:[/b]
+This project serves as an educational tool for learning about Indonesian culture, history, and traditions through interactive storytelling and exploration."
+fit_content = true
+
+[node name="AboutUsBackButton" type="Button" parent="AboutUsPanel/AboutUsContainer"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
+
+[node name="CreditsPanel" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsBackground" type="ColorRect" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 0.95)
+
+[node name="CreditsContainer" type="VBoxContainer" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsTitle" type="Label" parent="CreditsPanel/CreditsContainer"]
+layout_mode = 2
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsContent" type="RichTextLabel" parent="CreditsPanel/CreditsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "[b]Development Team[/b]
+
+[b]Project Lead:[/b]
+• Game Development Team
+
+[b]Cultural Research:[/b]
+• Indonesian Cultural Heritage Experts
+• Historical Documentation Team
+• Regional Cultural Specialists
+
+[b]Technical Development:[/b]
+• Godot Engine 4.x
+• GDScript Programming
+• 3D Environment Design
+• UI/UX Design
+
+[b]Cultural Content:[/b]
+• Traditional Market Research
+• Mount Tambora Historical Data
+• Papua Cultural Artifacts
+• Regional Cuisine Information
+
+[b]Special Thanks:[/b]
+• Indonesian Cultural Institutions
+• Historical Preservation Organizations
+• Educational Partners
+• Cultural Heritage Communities
+
+[b]Project Information:[/b]
+• Created for International Seminar on Indonesian Cultural Diversity
+• Educational Walking Simulator
+• Cultural Heritage Preservation Initiative
+• Interactive Learning Platform"
+fit_content = true
+
+[node name="CreditsBackButton" type="Button" parent="CreditsPanel/CreditsContainer"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="MainMenuContainer/MainButtons/StartGameButton" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MainMenuContainer/MainButtons/EthnicitDetectionButton" to="." method="_on_ethnicity_detection_pressed"]
+[connection signal="pressed" from="MainMenuContainer/MainButtons/TopengNusantaraButton" to="." method="_on_topeng_nusantara_pressed"]
+[connection signal="pressed" from="MainMenuContainer/MainButtons/HowToPlayButton" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="MainMenuContainer/MainButtons/AboutUsButton" to="." method="_on_about_us_pressed"]
+[connection signal="pressed" from="MainMenuContainer/MainButtons/CreditsButton" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenuContainer/MainButtons/ExitButton" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="StartGameSubmenu/SubmenuContainer/MapContainer/RegionButtons/IndonesiaBaratButton" to="." method="_on_indonesia_barat_pressed"]
+[connection signal="pressed" from="StartGameSubmenu/SubmenuContainer/MapContainer/RegionButtons/IndonesiaTengahButton" to="." method="_on_indonesia_tengah_pressed"]
+[connection signal="pressed" from="StartGameSubmenu/SubmenuContainer/MapContainer/RegionButtons/IndonesiaTimurButton" to="." method="_on_indonesia_timur_pressed"]
+[connection signal="pressed" from="StartGameSubmenu/SubmenuContainer/BackButton" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="HowToPlayPanel/HowToPlayContainer/HowToPlayBackButton" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="AboutUsPanel/AboutUsContainer/AboutUsBackButton" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="CreditsPanel/CreditsContainer/CreditsBackButton" to="." method="_on_back_to_main_pressed"]

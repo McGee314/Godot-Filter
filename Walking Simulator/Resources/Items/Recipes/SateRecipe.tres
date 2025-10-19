@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgdaa"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Sate Recipe"
+max_stack_size = 1
+cultural_region = "Indonesia Barat"
+historical_period = "Traditional"
+cultural_significance = "Sate (satay) is one of Indonesia's most iconic dishes, representing the country's rich grilling and spice traditions."
+description = "Skewered and grilled meat served with peanut sauce, representing Indonesia's mastery of spices and grilling techniques."
+educational_value = 3
+rarity = "Uncommon"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://baxxd4lv1du2h"]
+
+[ext_resource type="Script" uid="uid://8xsc10d7gg7n" path="res://Tests/Terrain3D/test_terrain3d_reinstall.gd" id="1_test"]
+
+[node name="Terrain3DReinstallTest" type="Node"]
+script = ExtResource("1_test")

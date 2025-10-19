@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3nr0lus7rkbh"]
+
+[ext_resource type="Script" uid="uid://b2bar42spye0m" path="res://Tests/Core_Systems/test_is_inside_tree_fix.gd" id="1_test_script"]
+
+[node name="TestIsInsideTreeFix" type="Node2D"]
+script = ExtResource("1_test_script")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 500.0
+offset_bottom = 200.0
+text = "Testing !is_inside_tree() fix
+Press ESC to test scene transition
+Check console for errors"

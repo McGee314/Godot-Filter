@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvj5idby5xnaa"]
+
+[ext_resource type="Script" uid="uid://b6fwtt1jj7p5r" path="res://Tests/Terrain3D/test_terrain3d_validation.gd" id="1_validation"]
+
+[node name="Terrain3DValidationTest" type="Node"]
+script = ExtResource("1_validation")

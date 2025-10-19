@@ -1,0 +1,27 @@
+[2025-09-28T13:37:31] [INFO] Game Logger initialized - Log file: logs/game_log_2025-09-28T13-37-31.log
+[2025-09-28T13:37:31] [INFO] Log level updated to: 3
+[2025-09-28T13:37:31] [INFO] SplashScreen: ===== SPLASH SCREEN STARTING =====
+[2025-09-28T13:37:31] [INFO] SplashScreen: Animations setup complete
+[2025-09-28T13:37:31] [INFO] SplashScreen: Starting splash sequence
+[2025-09-28T13:37:35] [INFO] SplashScreen: Splash sequence completed
+[2025-09-28T13:37:36] [INFO] SplashScreen: Fade out completed, transitioning to main menu
+[2025-09-28T13:37:36] [INFO] SplashScreen: Transitioning to main menu: res://Scenes/MainMenu/MainMenu.tscn
+[2025-09-28T13:37:37] [INFO] SplashScreen: Successfully transitioned to main menu
+[2025-09-28T13:37:37] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T13:37:37] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T13:37:37] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T13:37:38] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:37:39] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:37:39] [INFO] 🔍 Ethnicity Detection button pressed - navigating to ethnicity detection
+[2025-09-28T13:38:01] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:01] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:01] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T13:38:01] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T13:38:01] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T13:38:02] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:03] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:03] [INFO] 🎭 Topeng Nusantara button pressed - navigating to mask selection
+[2025-09-28T13:38:03] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:03] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:04] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:38:04] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false

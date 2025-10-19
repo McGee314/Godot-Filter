@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgda7"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Traditional Mask"
+max_stack_size = 1
+cultural_region = "Indonesia Timur"
+historical_period = "Traditional"
+cultural_significance = "Traditional masks from Papua represent spiritual beliefs and are used in ceremonial dances and rituals."
+description = "A ceremonial mask from Papua, used in traditional dances and spiritual ceremonies to connect with ancestral spirits."
+educational_value = 3
+rarity = "Uncommon"

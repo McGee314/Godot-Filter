@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgdba"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Sacred Stone"
+max_stack_size = 1
+cultural_region = "Indonesia Timur"
+historical_period = "Ancient"
+cultural_significance = "Sacred stones from Papua's megalithic sites represent ancient spiritual beliefs and cultural practices."
+description = "A sacred stone from Papua's megalithic sites, believed to have spiritual significance in ancient tribal ceremonies."
+educational_value = 4
+rarity = "Rare"

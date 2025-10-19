@@ -1,0 +1,331 @@
+[gd_scene load_steps=20 format=3 uid="uid://c8is2r5ftgc86"]
+
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc84" path="res://Systems/Audio/CulturalAudioManager.tscn" id="2_audio"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc85" path="res://Systems/Inventory/CulturalInventory.tscn" id="3_inventory"]
+[ext_resource type="Script" uid="uid://cgryvux04l2la" path="res://Scenes/RegionSceneController.gd" id="4_controller"]
+[ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="5_player"]
+[ext_resource type="Script" uid="uid://dqlmkipeygx7s" path="res://Systems/Items/WorldCulturalItem.gd" id="6_world_item"]
+[ext_resource type="Script" uid="uid://cb82diggp6ccs" path="res://Systems/NPCs/CulturalNPC.gd" id="7_npc"]
+[ext_resource type="Script" uid="uid://cfqshcad11v5h" path="res://Systems/NPCs/CookingGameNPC.gd" id="8_cooking_npc"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdab" path="res://Systems/UI/CulturalInfoPanel.tscn" id="8_info_panel"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdac" path="res://Systems/UI/NPCDialogueUI.tscn" id="9_dialogue_ui"]
+[ext_resource type="PackedScene" uid="uid://s1tfkx30tsbp" path="res://Systems/UI/SimpleRadarSystem.tscn" id="10_radar"]
+[ext_resource type="Script" uid="uid://c4uwth77ft73n" path="res://Systems/Debug/SceneDebugger.gd" id="11_debugger"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+albedo_color = Color(0.8, 0.6, 0.4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+size = Vector3(50, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stall"]
+size = Vector3(4, 2, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2"]
+albedo_color = Color(0.2, 0.8, 0.2, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_artifact"]
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_interaction"]
+radius = 2.0
+
+[node name="PasarScene" type="Node3D"]
+script = ExtResource("4_controller")
+
+[node name="SceneDebugger" type="Node3D" parent="."]
+script = ExtResource("11_debugger")
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 5)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Environment"]
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_1")
+
+[node name="GroundCollision" type="StaticBody3D" parent="Environment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/GroundCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_ground")
+
+[node name="Walls" type="Node3D" parent="Environment"]
+
+[node name="WallNorth" type="CSGBox3D" parent="Environment/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -25)
+size = Vector3(50, 4, 1)
+
+[node name="WallNorthCollision" type="StaticBody3D" parent="Environment/Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/WallNorthCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -25)
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallSouth" type="CSGBox3D" parent="Environment/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 25)
+size = Vector3(50, 4, 1)
+
+[node name="WallSouthCollision" type="StaticBody3D" parent="Environment/Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/WallSouthCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 25)
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallEast" type="CSGBox3D" parent="Environment/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2, 0)
+size = Vector3(1, 4, 50)
+
+[node name="WallEastCollision" type="StaticBody3D" parent="Environment/Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/WallEastCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2, 0)
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallWest" type="CSGBox3D" parent="Environment/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 0)
+size = Vector3(1, 4, 50)
+
+[node name="WallWestCollision" type="StaticBody3D" parent="Environment/Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/WallWestCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 0)
+shape = SubResource("BoxShape3D_wall")
+
+[node name="MarketStalls" type="Node3D" parent="Environment"]
+
+[node name="Stall1" type="CSGBox3D" parent="Environment/MarketStalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -10)
+size = Vector3(4, 2, 3)
+
+[node name="Stall1Collision" type="StaticBody3D" parent="Environment/MarketStalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MarketStalls/Stall1Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -10)
+shape = SubResource("BoxShape3D_stall")
+
+[node name="Stall2" type="CSGBox3D" parent="Environment/MarketStalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10)
+size = Vector3(4, 2, 3)
+
+[node name="Stall2Collision" type="StaticBody3D" parent="Environment/MarketStalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MarketStalls/Stall2Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10)
+shape = SubResource("BoxShape3D_stall")
+
+[node name="Stall3" type="CSGBox3D" parent="Environment/MarketStalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 10)
+size = Vector3(4, 2, 3)
+
+[node name="Stall3Collision" type="StaticBody3D" parent="Environment/MarketStalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MarketStalls/Stall3Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 10)
+shape = SubResource("BoxShape3D_stall")
+
+[node name="Stall4" type="CSGBox3D" parent="Environment/MarketStalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 10)
+size = Vector3(4, 2, 3)
+
+[node name="Stall4Collision" type="StaticBody3D" parent="Environment/MarketStalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MarketStalls/Stall4Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 10)
+shape = SubResource("BoxShape3D_stall")
+
+[node name="CulturalArtifacts" type="Node3D" parent="."]
+
+[node name="SotoRecipe" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, -8)
+radius = 0.3
+height = 0.2
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "SotoRecipe"
+cultural_region = "Indonesia Barat"
+
+[node name="SotoRecipeCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/SotoRecipeCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, -8)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="LotekRecipe" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -8)
+radius = 0.3
+height = 0.2
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "LotekRecipe"
+cultural_region = "Indonesia Barat"
+
+[node name="LotekRecipeCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/LotekRecipeCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -8)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="BasoRecipe" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 8)
+radius = 0.3
+height = 0.2
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "BasoRecipe"
+cultural_region = "Indonesia Barat"
+
+[node name="BasoRecipeCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/BasoRecipeCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 8)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="SateRecipe" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 8)
+radius = 0.3
+height = 0.2
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "SateRecipe"
+cultural_region = "Indonesia Barat"
+
+[node name="SateRecipeCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/SateRecipeCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 8)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="MarketGuide" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("7_npc")
+npc_name = "MarketGuide"
+cultural_region = "Indonesia Barat"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/MarketGuide"]
+material = SubResource("StandardMaterial3D_2")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/MarketGuide"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/MarketGuide/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/MarketGuide"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/MarketGuide/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="FoodVendor" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -10)
+script = ExtResource("7_npc")
+npc_name = "FoodVendor"
+cultural_region = "Indonesia Barat"
+npc_type = "Vendor"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/FoodVendor"]
+material = SubResource("StandardMaterial3D_2")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/FoodVendor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/FoodVendor/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/FoodVendor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/FoodVendor/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="CraftVendor" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -10)
+script = ExtResource("7_npc")
+npc_name = "CraftVendor"
+cultural_region = "Indonesia Barat"
+npc_type = "Vendor"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/CraftVendor"]
+material = SubResource("StandardMaterial3D_2")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/CraftVendor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/CraftVendor/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/CraftVendor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/CraftVendor/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Historian" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 10)
+script = ExtResource("7_npc")
+npc_name = "Historian"
+cultural_region = "Indonesia Barat"
+npc_type = "Historian"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/Historian"]
+material = SubResource("StandardMaterial3D_2")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/Historian"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Historian/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/Historian"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Historian/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="CookingChef" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15)
+script = ExtResource("8_cooking_npc")
+npc_name = "Chef Jakarta"
+cultural_region = "Indonesia Barat"
+npc_type = "Cooking Instructor"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/CookingChef"]
+material = SubResource("StandardMaterial3D_2")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/CookingChef"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/CookingChef/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/CookingChef"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/CookingChef/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 10, 0)
+light_energy = 1.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CulturalInventory" parent="UI" instance=ExtResource("3_inventory")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CulturalInfoPanel" parent="UI" instance=ExtResource("8_info_panel")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NPCDialogueUI" parent="UI" instance=ExtResource("9_dialogue_ui")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RadarSystem" parent="UI" instance=ExtResource("10_radar")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioManager" parent="." instance=ExtResource("2_audio")]

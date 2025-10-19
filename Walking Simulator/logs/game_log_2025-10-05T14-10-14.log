@@ -1,0 +1,46 @@
+[2025-10-05T14:10:14] [INFO] Game Logger initialized - Log file: logs/game_log_2025-10-05T14-10-14.log
+[2025-10-05T14:10:14] [INFO] Log level updated to: 3
+[2025-10-05T14:10:14] [INFO] SplashScreen: ===== SPLASH SCREEN STARTING =====
+[2025-10-05T14:10:14] [INFO] SplashScreen: Animations setup complete
+[2025-10-05T14:10:14] [INFO] SplashScreen: Starting splash sequence
+[2025-10-05T14:10:18] [INFO] SplashScreen: Splash sequence completed
+[2025-10-05T14:10:19] [INFO] SplashScreen: Fade out completed, transitioning to main menu
+[2025-10-05T14:10:19] [INFO] SplashScreen: Transitioning to main menu: res://Scenes/MainMenu/MainMenu.tscn
+[2025-10-05T14:10:19] [INFO] SplashScreen: Successfully transitioned to main menu
+[2025-10-05T14:10:19] [INFO] 🚀 MainMenuController _ready() called
+[2025-10-05T14:10:19] [INFO] ℹ️ Exit Game button signal already connected
+[2025-10-05T14:10:19] [INFO] ✅ MainMenuController initialization completed
+[2025-10-05T14:10:20] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:21] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:21] [INFO] 🎭 Topeng Nusantara button pressed - navigating to mask selection
+[2025-10-05T14:10:22] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:22] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:22] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:22] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:24] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:24] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:24] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:24] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:25] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:25] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:26] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:26] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:27] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:10:27] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:11:22] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:11:22] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:11:22] [INFO] 🚀 MainMenuController _ready() called
+[2025-10-05T14:11:22] [INFO] ℹ️ Exit Game button signal already connected
+[2025-10-05T14:11:22] [INFO] ✅ MainMenuController initialization completed
+[2025-10-05T14:11:23] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:11:23] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-05T14:11:23] [INFO] 🔘 Exit Game button pressed - showing unified confirmation dialog
+[2025-10-05T14:11:23] [INFO] 🔧 UnifiedExitDialog initialized
+[2025-10-05T14:11:23] [INFO] 🔧 Exit dialog configured for context: 2
+[2025-10-05T14:11:23] [INFO]    Source: Main Menu
+[2025-10-05T14:11:23] [INFO]    Target: 
+[2025-10-05T14:11:23] [INFO] 🖱️ Mouse mode set to VISIBLE for dialog interaction (was: 0)
+[2025-10-05T14:11:23] [INFO] ✅ Exit dialog shown for context: 2
+[2025-10-05T14:11:24] [INFO] ✅ User chose YES - executing exit action
+[2025-10-05T14:11:24] [INFO] 🚪 Quitting game...
+[2025-10-05T14:11:24] [INFO] Game Logger shutting down

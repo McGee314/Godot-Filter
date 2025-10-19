@@ -1,0 +1,4 @@
+res://Scenes/TopengNusantara/TopengSelectionScene.tscn
+res://Scenes/EthnicityDetection/WebcamClient/WebcamManagerUDP.gd
+res://Scenes/TopengNusantara/TopengWebcamScene.tscn
+res://Scenes/TopengNusantara/TopengCustomizationScene.tscn

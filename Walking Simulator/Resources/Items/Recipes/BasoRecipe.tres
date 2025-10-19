@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgc88"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Baso Recipe"
+max_stack_size = 1
+cultural_region = "Indonesia Barat"
+historical_period = "Traditional"
+cultural_significance = "Baso (meatball soup) is a beloved Indonesian street food that showcases the country's diverse culinary influences."
+description = "Indonesian meatball soup served in a clear broth with noodles, representing the fusion of local and foreign culinary traditions."
+educational_value = 2
+rarity = "Common"

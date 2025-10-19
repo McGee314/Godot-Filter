@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh0qy7a2nbr1p"]
+
+[ext_resource type="Script" path="res://Scenes/SplashScreen/SplashScreenController.gd" id="2_controller"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_controller")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SplashImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -304.0
+offset_right = 540.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FadeAnimation" type="AnimationPlayer" parent="."]
+
+[connection signal="animation_finished" from="FadeAnimation" to="." method="_on_fade_animation_finished"]

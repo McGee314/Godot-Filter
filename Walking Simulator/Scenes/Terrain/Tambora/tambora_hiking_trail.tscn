@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7a3xn18lg55u"]
+
+[ext_resource type="Script" uid="uid://d1gkeuc3d06sd" path="res://Systems/Terrain/TerrainManager.gd" id="1_terrain"]
+[ext_resource type="Script" uid="uid://b8b0xavu2slbo" path="res://Systems/Terrain/TamboraHikingTrail.gd" id="3_trail"]
+[ext_resource type="Script" uid="uid://bpg8uqkxjjnwy" path="res://Systems/Terrain/TrailPosition.gd" id="4_pos"]
+[ext_resource type="Script" uid="uid://ckgldo2g8qm1v" path="res://Systems/Terrain/ProceduralAssetPlacer.gd" id="5_placer"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 50.0
+dof_blur_far_transition = 20.0
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.2, 0.3, 0.5, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.4, 0.5, 0.6, 1)
+ambient_light_energy = 0.3
+fog_enabled = true
+fog_light_color = Color(0.6, 0.7, 0.8, 1)
+fog_sky_affect = 0.5
+
+[node name="TamboraHikingTrail" type="Node3D"]
+
+[node name="Terrain3D" type="Node3D" parent="."]
+script = ExtResource("1_terrain")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 50)
+attributes = SubResource("CameraAttributesPractical_1")
+fov = 60.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 100, 0)
+light_energy = 1.2
+shadow_enabled = true
+directional_shadow_max_distance = 200.0
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="TamboraHikingTrail" type="Node3D" parent="."]
+script = ExtResource("3_trail")
+
+[node name="TrailPositions" type="Node3D" parent="TamboraHikingTrail"]
+
+[node name="Start" type="Node3D" parent="TamboraHikingTrail/TrailPositions"]
+script = ExtResource("4_pos")
+position_name = "Start"
+elevation = 690.0
+coordinates = Vector2(-8.2, 117.87)
+
+[node name="Pos1" type="Node3D" parent="TamboraHikingTrail/TrailPositions"]
+script = ExtResource("4_pos")
+position_name = "Pos 1"
+elevation = 1077.0
+coordinates = Vector2(-8.2, 117.87)
+
+[node name="Pos2" type="Node3D" parent="TamboraHikingTrail/TrailPositions"]
+script = ExtResource("4_pos")
+position_name = "Pos 2"
+elevation = 1366.0
+coordinates = Vector2(-8.2, 117.87)
+
+[node name="Pos3" type="Node3D" parent="TamboraHikingTrail/TrailPositions"]
+script = ExtResource("4_pos")
+position_name = "Pos 3"
+elevation = 1600.0
+coordinates = Vector2(-8.2, 117.87)
+
+[node name="Pos4" type="Node3D" parent="TamboraHikingTrail/TrailPositions"]
+script = ExtResource("4_pos")
+position_name = "Pos 4"
+elevation = 2000.0
+coordinates = Vector2(-8.2, 117.87)
+
+[node name="Summit" type="Node3D" parent="TamboraHikingTrail/TrailPositions"]
+script = ExtResource("4_pos")
+position_name = "Summit"
+elevation = 2722.0
+coordinates = Vector2(-8.2, 117.87)
+
+[node name="ProceduralAssets" type="Node3D" parent="TamboraHikingTrail"]
+script = ExtResource("5_placer")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlPanel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -250.0
+offset_right = 320.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ControlPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "Tambora Hiking Trail"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "Generate Trail"
+
+[node name="Button2" type="Button" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "Place Assets"
+
+[node name="Button3" type="Button" parent="UI/ControlPanel/VBoxContainer"]
+layout_mode = 2
+text = "Reset Scene"
+
+[node name="InfoPanel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 180.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/InfoPanel/VBoxContainer"]
+layout_mode = 2
+text = "Trail Information"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/InfoPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ElevationLabel" type="Label" parent="UI/InfoPanel/VBoxContainer"]
+layout_mode = 2
+text = "Elevation: 690m"
+
+[node name="PositionLabel" type="Label" parent="UI/InfoPanel/VBoxContainer"]
+layout_mode = 2
+text = "Position: Start"
+
+[node name="DistanceLabel" type="Label" parent="UI/InfoPanel/VBoxContainer"]
+layout_mode = 2
+text = "Distance: 0.0km"

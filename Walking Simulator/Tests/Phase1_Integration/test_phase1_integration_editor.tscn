@@ -1,0 +1,166 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpoas34dwpvfh"]
+
+[ext_resource type="Script" uid="uid://cyjfoobrp7cht" path="res://Tests/Phase1_Integration/test_phase1_integration_editor.gd" id="1_test"]
+
+[sub_resource type="Environment" id="1_env"]
+background_mode = 2
+background_color = Color(0.1, 0.15, 0.2, 1)
+
+[sub_resource type="Gradient" id="Gradient_aq5ue"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m0ahq"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rso3w"]
+seamless = true
+color_ramp = SubResource("Gradient_aq5ue")
+noise = SubResource("FastNoiseLite_m0ahq")
+
+[sub_resource type="Terrain3DMaterial" id="3_terrain_mat"]
+_shader_parameters = {
+"auto_base_texture": 0,
+"auto_height_reduction": 0.1,
+"auto_overlay_texture": 1,
+"auto_slope": 1.0,
+"bias_distance": 512.0,
+"blend_sharpness": 0.87,
+"depth_blur": 0.0,
+"enable_macro_variation": true,
+"enable_projection": true,
+"height_blending": true,
+"macro_variation1": Color(1, 1, 1, 1),
+"macro_variation2": Color(1, 1, 1, 1),
+"macro_variation_slope": 0.333,
+"mipmap_bias": 1.0,
+"noise1_angle": 0.0,
+"noise1_offset": Vector2(0.5, 0.5),
+"noise1_scale": 0.04,
+"noise2_scale": 0.076,
+"noise3_scale": 0.225,
+"noise_texture": SubResource("NoiseTexture2D_rso3w"),
+"projection_angular_division": 2.0,
+"projection_threshold": 0.8,
+"world_noise_fragment_normals": false,
+"world_noise_height": 34.0,
+"world_noise_lod_distance": 7500.0,
+"world_noise_max_octaves": 4,
+"world_noise_min_octaves": 2,
+"world_noise_offset": Vector3(0, 0, 0),
+"world_noise_region_blend": 0.33,
+"world_noise_scale": 9.85,
+"world_space_normal_blend": true
+}
+world_background = 2
+auto_shader = true
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d34dc"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_asuq1"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_d34dc")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_2nr42"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_asuq1")])
+
+[node name="Phase1IntegrationTest" type="Node3D"]
+script = ExtResource("1_test")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("1_env")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, 0.25, 0.866025, 0.433012, 0.433012, -0.5, 0.75, 0, 15, 0)
+light_energy = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 15)
+current = true
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+material = SubResource("3_terrain_mat")
+assets = SubResource("Terrain3DAssets_2nr42")
+collision_mask = 3
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TestPanel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TestPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Phase 1 Integration Test"
+horizontal_alignment = 1
+
+[node name="TestButton1" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test Terrain3D"
+
+[node name="TestButton2" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test PSX Assets"
+
+[node name="TestButton3" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test Integration"
+
+[node name="TestButton4" type="Button" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Run All Tests"
+
+[node name="StatusLabel" type="Label" parent="UI/TestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Ready to test..."
+horizontal_alignment = 1

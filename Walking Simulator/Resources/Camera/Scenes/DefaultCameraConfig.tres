@@ -1,0 +1,57 @@
+[gd_resource type="CameraSceneConfig" script_class="CameraSceneConfig" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Systems/Camera/CameraSceneConfig.gd" id="1"]
+
+[sub_resource type="Resource" id="CameraViewConfig_1"]
+script = preload("res://Systems/Camera/CameraViewConfig.gd")
+view_name = "Player View"
+view_description = "Standard third-person view"
+spring_length = 5.0
+collision_enabled = true
+collision_margin = 0.04
+pivot_offset = Vector3(0, 1.8, 0)
+pivot_rotation = Vector3(-0.174533, 0, 0)
+smooth_transition = true
+transition_speed = 3.0
+follow_player = true
+key_binding = 49
+
+[sub_resource type="Resource" id="CameraViewConfig_2"]
+script = preload("res://Systems/Camera/CameraViewConfig.gd")
+view_name = "Overview"
+view_description = "Wide area overview"
+spring_length = 25.0
+collision_enabled = true
+collision_margin = 0.04
+pivot_offset = Vector3(0, 15.0, 0)
+pivot_rotation = Vector3(-0.523599, 0, 0)
+smooth_transition = true
+transition_speed = 2.0
+follow_player = false
+key_binding = 50
+
+[sub_resource type="Resource" id="CameraViewConfig_3"]
+script = preload("res://Systems/Camera/CameraViewConfig.gd")
+view_name = "Close Follow"
+view_description = "Close following camera"
+spring_length = 3.0
+collision_enabled = true
+collision_margin = 0.04
+pivot_offset = Vector3(0, 1.2, 0)
+pivot_rotation = Vector3(-0.087266, 0, 0)
+smooth_transition = true
+transition_speed = 4.0
+follow_player = true
+key_binding = 51
+
+[resource]
+script = ExtResource("1")
+scene_name = "Default Scene"
+scene_description = "Default camera configuration for general scenes"
+player_view = SubResource("CameraViewConfig_1")
+far_side_view = SubResource("CameraViewConfig_2")
+canopy_view = SubResource("CameraViewConfig_3")
+custom_views = Array[Resource("res://Systems/Camera/CameraViewConfig.gd")]([])
+default_view_mode = 0
+enable_mouse_look = true
+mouse_sensitivity = 0.002

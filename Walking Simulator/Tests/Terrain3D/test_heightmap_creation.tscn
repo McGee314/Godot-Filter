@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgxkfv2y4fopo"]
+
+[ext_resource type="Script" uid="uid://d4dybfdbtb1co" path="res://Tests/Terrain3D/test_heightmap_creation.gd" id="1_heightmap"]
+
+[node name="TestHeightmapCreation" type="Node"]
+script = ExtResource("1_heightmap")

@@ -1,0 +1,435 @@
+[gd_scene load_steps=24 format=3 uid="uid://d0po4r1o5t3f0"]
+
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc84" path="res://Systems/Audio/CulturalAudioManager.tscn" id="2_audio"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc85" path="res://Systems/Inventory/CulturalInventory.tscn" id="3_inventory"]
+[ext_resource type="Script" uid="uid://cgryvux04l2la" path="res://Scenes/RegionSceneController.gd" id="4_controller"]
+[ext_resource type="Script" uid="uid://d18olnlnha4vn" path="res://Player Controller/PlayerControllerIntegrated.gd" id="5_integrated_player"]
+[ext_resource type="Script" uid="uid://dqlmkipeygx7s" path="res://Systems/Items/WorldCulturalItem.gd" id="6_world_item"]
+[ext_resource type="Script" uid="uid://cb82diggp6ccs" path="res://Systems/NPCs/CulturalNPC.gd" id="7_npc"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdab" path="res://Systems/UI/CulturalInfoPanel.tscn" id="8_info_panel"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdac" path="res://Systems/UI/NPCDialogueUI.tscn" id="9_dialogue_ui"]
+[ext_resource type="PackedScene" uid="uid://s1tfkx30tsbp" path="res://Systems/UI/SimpleRadarSystem.tscn" id="10_radar"]
+[ext_resource type="Script" uid="uid://dj2jvj2b7t8fh" path="res://Scenes/IndonesiaTimur/PapuaScene_FPSDisplay.gd" id="11_fps_script"]
+[ext_resource type="Script" uid="uid://db48b5a3q2j7o" path="res://Player Controller/InteractionController.gd" id="12_interaction_controller"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+albedo_color = Color(0.2, 0.8, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2"]
+albedo_color = Color(0.8, 0.6, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3"]
+albedo_color = Color(0.6, 0.4, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4"]
+albedo_color = Color(0.8, 0.2, 0.8, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_artifact"]
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_interaction"]
+radius = 5.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_player"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_interaction"]
+font_size = 24
+
+[node name="PapuaScene_Fixed" type="Node3D"]
+script = ExtResource("4_controller")
+
+[node name="SceneEnvironment" type="Node3D" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="SceneEnvironment"]
+
+[node name="GroundCollision" type="CollisionShape3D" parent="SceneEnvironment/Ground"]
+shape = SubResource("BoxShape3D_ground")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="SceneEnvironment/Ground"]
+material_override = SubResource("StandardMaterial3D_1")
+mesh = SubResource("BoxMesh_ground")
+
+[node name="JungleTrees" type="Node3D" parent="SceneEnvironment"]
+
+[node name="Tree1" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -15)
+radius = 1.0
+height = 6.0
+material = SubResource("StandardMaterial3D_2")
+
+[node name="TreeTop1" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7, -15)
+radius = 3.0
+material = SubResource("StandardMaterial3D_3")
+
+[node name="Tree2" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -15)
+radius = 1.0
+height = 6.0
+material = SubResource("StandardMaterial3D_2")
+
+[node name="TreeTop2" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 7, -15)
+radius = 3.0
+material = SubResource("StandardMaterial3D_3")
+
+[node name="Tree3" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, 15)
+radius = 1.0
+height = 6.0
+material = SubResource("StandardMaterial3D_2")
+
+[node name="TreeTop3" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7, 15)
+radius = 3.0
+material = SubResource("StandardMaterial3D_3")
+
+[node name="Tree4" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, 15)
+radius = 1.0
+height = 6.0
+material = SubResource("StandardMaterial3D_2")
+
+[node name="TreeTop4" type="CSGCylinder3D" parent="SceneEnvironment/JungleTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 7, 15)
+radius = 3.0
+material = SubResource("StandardMaterial3D_3")
+
+[node name="MegalithicSite" type="Node3D" parent="SceneEnvironment"]
+
+[node name="StoneCircle" type="Node3D" parent="SceneEnvironment/MegalithicSite"]
+
+[node name="Stone1" type="CSGCylinder3D" parent="SceneEnvironment/MegalithicSite/StoneCircle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
+radius = 0.8
+material = SubResource("StandardMaterial3D_2")
+
+[node name="Stone2" type="CSGCylinder3D" parent="SceneEnvironment/MegalithicSite/StoneCircle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 0)
+radius = 0.8
+material = SubResource("StandardMaterial3D_2")
+
+[node name="Stone3" type="CSGCylinder3D" parent="SceneEnvironment/MegalithicSite/StoneCircle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
+radius = 0.8
+material = SubResource("StandardMaterial3D_2")
+
+[node name="Stone4" type="CSGCylinder3D" parent="SceneEnvironment/MegalithicSite/StoneCircle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 0)
+radius = 0.8
+material = SubResource("StandardMaterial3D_2")
+
+[node name="CulturalArtifacts" type="Node3D" parent="."]
+
+[node name="BatuDootomo" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 0)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_4")
+script = ExtResource("6_world_item")
+item_name = "BatuDootomo"
+cultural_region = "Indonesia Timur"
+
+[node name="BatuDootomoCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/BatuDootomoCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 0)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="KapakPerunggu" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 8)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_4")
+script = ExtResource("6_world_item")
+item_name = "KapakPerunggu"
+cultural_region = "Indonesia Timur"
+
+[node name="KapakPerungguCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/KapakPerungguCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 8)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="TraditionalMask" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 8)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_4")
+script = ExtResource("6_world_item")
+item_name = "TraditionalMask"
+cultural_region = "Indonesia Timur"
+
+[node name="TraditionalMaskCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/TraditionalMaskCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 8)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="AncientTool" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 0)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_4")
+script = ExtResource("6_world_item")
+item_name = "AncientTool"
+cultural_region = "Indonesia Timur"
+
+[node name="AncientToolCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/AncientToolCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 0)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="SacredStone" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -4)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_4")
+script = ExtResource("6_world_item")
+item_name = "SacredStone"
+cultural_region = "Indonesia Timur"
+
+[node name="SacredStoneCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/SacredStoneCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -4)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="TribalOrnament" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 4)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_4")
+script = ExtResource("6_world_item")
+item_name = "TribalOrnament"
+cultural_region = "Indonesia Timur"
+
+[node name="TribalOrnamentCollision" type="StaticBody3D" parent="CulturalArtifacts"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CulturalArtifacts/TribalOrnamentCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 4)
+shape = SubResource("CylinderShape3D_artifact")
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="CulturalGuide" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("7_npc")
+npc_name = "CulturalGuide"
+cultural_region = "Indonesia Timur"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/CulturalGuide"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/CulturalGuide"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/CulturalGuide/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/CulturalGuide"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/CulturalGuide/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Archaeologist" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, 30)
+script = ExtResource("7_npc")
+npc_name = "Archaeologist"
+cultural_region = "Indonesia Timur"
+npc_type = "Historian"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/Archaeologist"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/Archaeologist"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Archaeologist/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/Archaeologist"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Archaeologist/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="TribalElder" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 20)
+script = ExtResource("7_npc")
+npc_name = "TribalElder"
+cultural_region = "Indonesia Timur"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/TribalElder"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/TribalElder"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/TribalElder/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/TribalElder"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/TribalElder/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Artisan" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, -50)
+script = ExtResource("7_npc")
+npc_name = "Artisan"
+cultural_region = "Indonesia Timur"
+npc_type = "Vendor"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/Artisan"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/Artisan"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Artisan/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/Artisan"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Artisan/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 80)
+script = ExtResource("5_integrated_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="PlayerBody" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_player")
+
+[node name="InteractionController" type="RayCast3D" parent="Player"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 3
+script = ExtResource("12_interaction_controller")
+
+[node name="InteractionPrompt" type="Label" parent="Player/InteractionController"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -50.0
+offset_right = 247.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_interaction")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CameraPivot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="CameraArm" type="SpringArm3D" parent="Player/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+spring_length = 6.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot/CameraArm"]
+current = true
+near = 0.1
+far = 1000.0
+
+[node name="GroundCheck" type="RayCast3D" parent="Player"]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 10, 0)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="Environment" type="Environment" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+background_mode = 1
+background_color = Color(0.5, 0.7, 1, 1)
+script = null
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CulturalInventory" parent="UI" instance=ExtResource("3_inventory")]
+visible = false
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CulturalInfoPanel" parent="UI" instance=ExtResource("8_info_panel")]
+visible = false
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NPCDialogueUI" parent="UI" instance=ExtResource("9_dialogue_ui")]
+visible = false
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RadarSystem" parent="UI" instance=ExtResource("10_radar")]
+visible = false
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPSDisplay" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = -10.0
+grow_vertical = 0
+script = ExtResource("11_fps_script")
+
+[node name="FPSLabel" type="Label" parent="UI/FPSDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FPS: --"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FPSUpdateTimer" type="Timer" parent="UI/FPSDisplay"]
+wait_time = 0.5
+autostart = true
+
+[node name="AudioManager" parent="." instance=ExtResource("2_audio")]
+
+[node name="DebugUI" type="CanvasLayer" parent="."]
+
+[node name="MovementDebug" type="Label" parent="DebugUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -120.0
+offset_right = 500.0
+offset_bottom = -20.0
+text = "Movement Debug: WASD to move, Mouse to look, M to toggle mouse, Shift to run, Space to jump"

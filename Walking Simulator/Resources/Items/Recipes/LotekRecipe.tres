@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgc87"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Lotek Recipe"
+max_stack_size = 1
+cultural_region = "Indonesia Barat"
+historical_period = "Traditional"
+cultural_significance = "Lotek is a traditional Indonesian salad made with boiled vegetables and peanut sauce, representing healthy street food culture."
+description = "A refreshing Indonesian salad featuring boiled vegetables served with a rich peanut sauce, often found in traditional markets."
+educational_value = 2
+rarity = "Common"

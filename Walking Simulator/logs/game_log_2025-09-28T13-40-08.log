@@ -1,0 +1,45 @@
+[2025-09-28T13:40:08] [INFO] Game Logger initialized - Log file: logs/game_log_2025-09-28T13-40-08.log
+[2025-09-28T13:40:08] [INFO] Log level updated to: 3
+[2025-09-28T13:40:08] [INFO] SplashScreen: ===== SPLASH SCREEN STARTING =====
+[2025-09-28T13:40:08] [INFO] SplashScreen: Animations setup complete
+[2025-09-28T13:40:08] [INFO] SplashScreen: Starting splash sequence
+[2025-09-28T13:40:12] [INFO] SplashScreen: Splash sequence completed
+[2025-09-28T13:40:13] [INFO] SplashScreen: Fade out completed, transitioning to main menu
+[2025-09-28T13:40:13] [INFO] SplashScreen: Transitioning to main menu: res://Scenes/MainMenu/MainMenu.tscn
+[2025-09-28T13:40:13] [INFO] SplashScreen: Successfully transitioned to main menu
+[2025-09-28T13:40:13] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T13:40:13] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T13:40:13] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T13:40:15] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:15] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:15] [INFO] 🔍 Ethnicity Detection button pressed - navigating to ethnicity detection
+[2025-09-28T13:40:16] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:16] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:17] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T13:40:17] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T13:40:17] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T13:40:17] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:18] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:18] [INFO] 🎭 Topeng Nusantara button pressed - navigating to mask selection
+[2025-09-28T13:40:19] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:20] [DEBUG] [InputDebug] _input: key phys=4194314, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:20] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:20] [DEBUG] [InputDebug] _input: key phys=4194328, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:28] [DEBUG] [InputDebug] _input: key phys=4194328, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:34] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:34] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:34] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T13:40:34] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T13:40:34] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T13:40:36] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:36] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T13:40:36] [INFO] 🔘 Exit Game button pressed - showing unified confirmation dialog
+[2025-09-28T13:40:36] [INFO] 🔧 UnifiedExitDialog initialized
+[2025-09-28T13:40:36] [INFO] 🔧 Exit dialog configured for context: 2
+[2025-09-28T13:40:36] [INFO]    Source: Main Menu
+[2025-09-28T13:40:36] [INFO]    Target: 
+[2025-09-28T13:40:36] [INFO] 🖱️ Mouse mode set to VISIBLE for dialog interaction (was: 0)
+[2025-09-28T13:40:36] [INFO] ✅ Exit dialog shown for context: 2
+[2025-09-28T13:40:38] [INFO] ✅ User chose YES - executing exit action
+[2025-09-28T13:40:38] [INFO] 🚪 Quitting game...
+[2025-09-28T13:40:38] [INFO] Game Logger shutting down

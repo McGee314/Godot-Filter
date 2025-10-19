@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm8v5xpb6yfgl"]
+
+[ext_resource type="Script" path="res://Tests/GraphSystem_Test.gd" id="1_5kd7h"]
+
+[node name="GraphSystemTest" type="Node"]
+script = ExtResource("1_5kd7h")

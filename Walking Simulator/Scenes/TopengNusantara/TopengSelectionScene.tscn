@@ -1,0 +1,212 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8hq7v2n5k4r8"]
+
+[ext_resource type="Script" path="res://Scenes/TopengNusantara/TopengSelectionController.gd" id="1_controller"]
+
+[node name="TopengSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_controller")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 1)
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="MainContainer"]
+layout_mode = 2
+text = "PILIH TOPENG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MaskContainer" type="Control" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/MaskContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Face1Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face1Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face1Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face1Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face1Container"]
+layout_mode = 2
+text = "Face 1"
+horizontal_alignment = 1
+
+[node name="Face2Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face2Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face2Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face2Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face2Container"]
+layout_mode = 2
+text = "Face 2"
+horizontal_alignment = 1
+
+[node name="Face3Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face3Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face3Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face3Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face3Container"]
+layout_mode = 2
+text = "Face 3"
+horizontal_alignment = 1
+
+[node name="Face4Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face4Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face4Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face4Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face4Container"]
+layout_mode = 2
+text = "Face 4"
+horizontal_alignment = 1
+
+[node name="Face5Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face5Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face5Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face5Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face5Container"]
+layout_mode = 2
+text = "Face 5"
+horizontal_alignment = 1
+
+[node name="Face6Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face6Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face6Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face6Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face6Container"]
+layout_mode = 2
+text = "Face 6"
+horizontal_alignment = 1
+
+[node name="Face7Container" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Face7Button" type="Button" parent="MainContainer/MaskContainer/GridContainer/Face7Container"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Face7Label" type="Label" parent="MainContainer/MaskContainer/GridContainer/Face7Container"]
+layout_mode = 2
+text = "Face 7"
+horizontal_alignment = 1
+
+[node name="CustomContainer" type="VBoxContainer" parent="MainContainer/MaskContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CustomButton" type="Button" parent="MainContainer/MaskContainer/GridContainer/CustomContainer"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 2
+size_flags_vertical = 3
+text = "+"
+
+[node name="CustomLabel" type="Label" parent="MainContainer/MaskContainer/GridContainer/CustomContainer"]
+layout_mode = 2
+text = "Custom"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PilihButton" type="Button" parent="MainContainer/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Pilih"
+
+[node name="BackButton" type="Button" parent="MainContainer/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Kembali"
+
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face1Container/Face1Button" to="." method="_on_face_button_pressed" binds= [1]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face2Container/Face2Button" to="." method="_on_face_button_pressed" binds= [2]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face3Container/Face3Button" to="." method="_on_face_button_pressed" binds= [3]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face4Container/Face4Button" to="." method="_on_face_button_pressed" binds= [4]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face5Container/Face5Button" to="." method="_on_face_button_pressed" binds= [5]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face6Container/Face6Button" to="." method="_on_face_button_pressed" binds= [6]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/Face7Container/Face7Button" to="." method="_on_face_button_pressed" binds= [7]]
+[connection signal="pressed" from="MainContainer/MaskContainer/GridContainer/CustomContainer/CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/PilihButton" to="." method="_on_pilih_button_pressed"]
+[connection signal="pressed" from="MainContainer/ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]

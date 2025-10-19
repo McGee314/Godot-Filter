@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgdaa"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Tribal Ornament"
+max_stack_size = 1
+cultural_region = "Indonesia Timur"
+historical_period = "Traditional"
+cultural_significance = "Tribal ornaments from Papua showcase the artistic skills and cultural identity of indigenous communities."
+description = "A traditional tribal ornament from Papua, representing the artistic heritage and cultural identity of indigenous communities."
+educational_value = 2
+rarity = "Common"

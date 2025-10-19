@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgda1"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Tambora Rock Sample"
+max_stack_size = 1
+cultural_region = "Indonesia Tengah"
+historical_period = "1815"
+cultural_significance = "Rock samples from Mount Tambora provide evidence of the 1815 eruption's massive scale and geological impact."
+description = "A volcanic rock sample from Mount Tambora, containing minerals and textures that tell the story of the 1815 eruption."
+educational_value = 4
+rarity = "Rare"

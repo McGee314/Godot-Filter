@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8is2r5ftgc85"]
+
+[ext_resource type="Script" uid="uid://begtluje3mb3u" path="res://Systems/Inventory/CulturalInventory.gd" id="1_inventory"]
+
+[node name="CulturalInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_inventory")
+
+[node name="InventoryWindow" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+visible = false
+
+[node name="Title" type="Label" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+text = "Cultural Artifacts Collection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotContainer" type="GridContainer" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = -20.0
+offset_bottom = -80.0
+columns = 5
+
+[node name="ProgressLabel" type="Label" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+text = "Collected: 0/0 Artifacts"
+vertical_alignment = 1
+
+[node name="InfoText" type="Label" parent="InventoryWindow"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+offset_right = -20.0
+offset_bottom = -5.0
+text = "Press I to open/close inventory"
+horizontal_alignment = 1
+vertical_alignment = 1

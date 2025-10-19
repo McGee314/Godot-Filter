@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PSXAssetPack" load_steps=2 format=3 uid="uid://caa682e0gu7g4"]
+
+[ext_resource type="Script" uid="uid://d3mjaoksgfec2" path="res://Systems/Terrain/PSXAssetPack.gd" id="1_psx"]
+
+[resource]
+script = ExtResource("1_psx")
+region_name = "Papua_FBX"
+environment_type = "tropical_forest"
+trees = Array[String](["res://Assets/Terrain/Shared/psx_models/trees/pine_tree_1.tscn", "res://Assets/Terrain/Shared/psx_models/trees/pine_tree_2.tscn", "res://Assets/Terrain/Shared/psx_models/trees/pine_tree_3.tscn"])
+vegetation = Array[String](["res://Assets/Terrain/Shared/psx_models/vegetation/forest_grass_1.tscn", "res://Assets/Terrain/Shared/psx_models/vegetation/forest_grass_2.tscn", "res://Assets/Terrain/Shared/psx_models/vegetation/fern_1.tscn", "res://Assets/Terrain/Shared/psx_models/vegetation/fern_2.tscn", "res://Assets/Terrain/Shared/psx_models/vegetation/fern_3.tscn"])
+stones = Array[String](["res://Assets/Terrain/Shared/psx_models/stones/rocks/stone_1.glb", "res://Assets/Terrain/Shared/psx_models/stones/rocks/stone_2.glb", "res://Assets/Terrain/Shared/psx_models/stones/rocks/stone_3.glb", "res://Assets/Terrain/Shared/psx_models/stones/rocks/stone_4.glb", "res://Assets/Terrain/Shared/psx_models/stones/rocks/stone_5.glb"])
+debris = Array[String]([])
+mushrooms = Array[String](["res://Assets/Terrain/Shared/psx_models/mushrooms/white_mushrooms_1.tscn", "res://Assets/Terrain/Shared/psx_models/mushrooms/white_mushrooms_2.tscn", "res://Assets/Terrain/Shared/psx_models/mushrooms/brown_mushrooms_1.tscn"])

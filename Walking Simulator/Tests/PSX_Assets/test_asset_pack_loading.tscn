@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cir5r57g2vvt7"]
+
+[ext_resource type="Script" uid="uid://qdgcrmrtoj3j" path="res://Tests/PSX_Assets/test_asset_pack_loading.gd" id="1_test"]
+
+[node name="TestAssetPackLoading" type="Node"]
+script = ExtResource("1_test")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgda2"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Historical Document"
+max_stack_size = 1
+cultural_region = "Indonesia Tengah"
+historical_period = "1815-1816"
+cultural_significance = "Historical documents from the Tambora eruption period provide firsthand accounts of the global climate impact."
+description = "A historical document detailing the effects of the 1815 Tambora eruption on global weather patterns and agriculture."
+educational_value = 5
+rarity = "Rare"

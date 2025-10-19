@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqxvn8yqxqxqx"]
+
+[ext_resource type="Script" uid="uid://nkaak7nu35ko" path="res://Tests/PSX_Assets/test_format_comparison.gd" id="1_0x8yq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1x8yq"]
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="FormatComparisonTest" type="Node3D"]
+script = ExtResource("1_0x8yq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 8)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 10, 0)
+light_energy = 1.5
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_1x8yq")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 410.0
+offset_bottom = 40.0
+text = "Format Comparison Test - Ready"
+
+[node name="ButtonContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 210.0
+offset_bottom = 300.0
+
+[node name="LoadFBX" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+text = "Load FBX Models"
+
+[node name="LoadGLB" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+text = "Load GLB Models"
+
+[node name="LoadDAE" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+text = "Load DAE Models"
+
+[node name="LoadOBJ" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+text = "Load OBJ Models"
+
+[node name="ClearModels" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 2
+text = "Clear All Models"
+
+[node name="InfoLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 50.0
+offset_right = 620.0
+offset_bottom = 200.0
+text = "Format Comparison:
+• FBX: Industry standard, larger files
+• GLB: Most efficient, embedded textures
+• DAE: Open standard, good compatibility  
+• OBJ: Simple, universal, small files
+
+Click buttons to test different formats!"
+
+[node name="ModelContainer" type="Node3D" parent="."]

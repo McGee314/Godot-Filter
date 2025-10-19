@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgc82"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Soto Recipe"
+max_stack_size = 1
+cultural_region = "Indonesia Barat"
+historical_period = "Traditional"
+cultural_significance = "Soto is one of Indonesia's most beloved traditional soups, with regional variations across the archipelago."
+description = "A traditional Indonesian soup made with meat and vegetables in a flavorful broth, often served with rice and various condiments."
+educational_value = 2
+rarity = "Common"

@@ -1,0 +1,181 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqx8v2k3n4m5p"]
+
+[ext_resource type="Script" uid="uid://c63pl4y2axxtt" path="res://Scenes/IndonesiaTimur/PapuaScene_Terrain3DEditor.gd" id="1_0x8v2k"]
+[ext_resource type="Script" uid="uid://dnki5iny7m1n7" path="res://Systems/Terrain/TerrainDataManager.gd" id="2_1x9w3l"]
+
+[node name="PapuaScene_Terrain3DEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0x8v2k")
+
+[node name="TerrainDataManager" type="Node" parent="."]
+script = ExtResource("2_1x9w3l")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.1, 0.8)
+
+[node name="MainPanel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "🌴 Papua Terrain3D Editor"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SaveSection" type="VBoxContainer" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SaveLabel" type="Label" parent="UI/MainPanel/VBoxContainer/SaveSection"]
+layout_mode = 2
+text = "💾 Save Environment Data"
+
+[node name="SaveNameContainer" type="HBoxContainer" parent="UI/MainPanel/VBoxContainer/SaveSection"]
+layout_mode = 2
+
+[node name="SaveNameLabel" type="Label" parent="UI/MainPanel/VBoxContainer/SaveSection/SaveNameContainer"]
+layout_mode = 2
+text = "Save Name:"
+
+[node name="SaveNameInput" type="LineEdit" parent="UI/MainPanel/VBoxContainer/SaveSection/SaveNameContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "e.g., papua_base_v1"
+
+[node name="SaveButton" type="Button" parent="UI/MainPanel/VBoxContainer/SaveSection"]
+layout_mode = 2
+text = "💾 Save Current Environment"
+
+[node name="HSeparator2" type="HSeparator" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoadSection" type="VBoxContainer" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoadLabel" type="Label" parent="UI/MainPanel/VBoxContainer/LoadSection"]
+layout_mode = 2
+text = "📂 Load Environment Data"
+
+[node name="LoadListContainer" type="VBoxContainer" parent="UI/MainPanel/VBoxContainer/LoadSection"]
+layout_mode = 2
+
+[node name="LoadListLabel" type="Label" parent="UI/MainPanel/VBoxContainer/LoadSection/LoadListContainer"]
+layout_mode = 2
+text = "Available Saves:"
+
+[node name="LoadList" type="ItemList" parent="UI/MainPanel/VBoxContainer/LoadSection/LoadListContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadButtonContainer" type="HBoxContainer" parent="UI/MainPanel/VBoxContainer/LoadSection"]
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="UI/MainPanel/VBoxContainer/LoadSection/LoadButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "📂 Load Selected Save"
+
+[node name="DeleteButton" type="Button" parent="UI/MainPanel/VBoxContainer/LoadSection/LoadButtonContainer"]
+layout_mode = 2
+text = "🗑️ Delete"
+
+[node name="HSeparator3" type="HSeparator" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ActionsSection" type="VBoxContainer" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ActionsLabel" type="Label" parent="UI/MainPanel/VBoxContainer/ActionsSection"]
+layout_mode = 2
+text = "🎮 Quick Actions"
+
+[node name="ActionsContainer" type="HBoxContainer" parent="UI/MainPanel/VBoxContainer/ActionsSection"]
+layout_mode = 2
+
+[node name="GenerateButton" type="Button" parent="UI/MainPanel/VBoxContainer/ActionsSection/ActionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🌲 Generate New"
+
+[node name="ClearButton" type="Button" parent="UI/MainPanel/VBoxContainer/ActionsSection/ActionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🧹 Clear All"
+
+[node name="HSeparator4" type="HSeparator" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="StatusSection" type="VBoxContainer" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="UI/MainPanel/VBoxContainer/StatusSection"]
+layout_mode = 2
+text = "📊 Status"
+
+[node name="StatusText" type="RichTextLabel" parent="UI/MainPanel/VBoxContainer/StatusSection"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Ready to save/load environment data..."
+
+[node name="HSeparator5" type="HSeparator" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="UI/MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "❌ Close Editor"
+
+[node name="3DViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="3DViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 10)
+fov = 60.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DViewport"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Environment" type="Node3D" parent="3DViewport"]

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CameraSceneConfig" load_steps=4 format=3 uid="uid://bwxgm8r3x4y5z"]
+
+[ext_resource type="Script" path="res://Systems/Camera/CameraSceneConfig.gd" id="1_scene_config"]
+[ext_resource type="Script" path="res://Systems/Camera/CameraViewConfig.gd" id="2_view_config"]
+
+[sub_resource type="Resource" id="CameraViewConfig_1"]
+script = ExtResource("2_view_config")
+view_name = "Player View"
+view_description = "Normal third-person player view"
+key_binding = 49
+spring_length = 7.0
+pivot_rotation = Vector3(-0.261799, 0, 0)
+pivot_offset = Vector3(0, 2.5, 0)
+
+[sub_resource type="Resource" id="CameraViewConfig_2"]
+script = ExtResource("2_view_config")
+view_name = "Far Side View"
+view_description = "High overview from far side"
+key_binding = 50
+spring_length = 50.0
+pivot_rotation = Vector3(-0.785398, 0.785398, 0)
+pivot_offset = Vector3(0, 30.0, 0)
+
+[sub_resource type="Resource" id="CameraViewConfig_3"]
+script = ExtResource("2_view_config")
+view_name = "Canopy View"
+view_description = "Above forest canopy level"
+key_binding = 51
+spring_length = 15.0
+pivot_rotation = Vector3(-1.0472, 0, 0)
+pivot_offset = Vector3(0, 20.0, 0)
+
+[resource]
+script = ExtResource("1_scene_config")
+scene_name = "Papua Scene"
+scene_description = "Camera configuration for Papua terrain exploration"
+default_view_index = 0
+views = [SubResource("CameraViewConfig_1"), SubResource("CameraViewConfig_2"), SubResource("CameraViewConfig_3")]

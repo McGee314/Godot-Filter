@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgda3"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Eruption Timeline"
+max_stack_size = 1
+cultural_region = "Indonesia Tengah"
+historical_period = "1815"
+cultural_significance = "The timeline of the Tambora eruption shows the sequence of events that led to the largest volcanic eruption in recorded history."
+description = "A detailed timeline of the 1815 Mount Tambora eruption, from initial signs to the final catastrophic explosion."
+educational_value = 3
+rarity = "Uncommon"

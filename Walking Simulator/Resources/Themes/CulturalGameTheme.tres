@@ -1,0 +1,24 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" uid="uid://b4l68ugq2an31" path="res://Assets/Fonts/GentiumBookPlus-Regular.ttf" id="1_body_font"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Rooters.ttf" id="2_header_font"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/SourceSans3-VariableFont_wght.ttf" id="3_ui_font"]
+
+[resource]
+default_font = ExtResource("3_ui_font")
+default_font_size = 16
+
+Button/colors/font_color = Color(0.9, 0.9, 0.9, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 0.95, 0.8, 1)
+Button/colors/font_disabled_color = Color(0.5, 0.5, 0.5, 1)
+Button/fonts/font = ExtResource("3_ui_font")
+Button/font_sizes/font_size = 16
+
+Label/colors/font_color = Color(0.9, 0.9, 0.9, 1)
+Label/fonts/font = ExtResource("1_body_font")
+Label/font_sizes/font_size = 16
+
+RichTextLabel/colors/default_color = Color(0.9, 0.9, 0.9, 1)
+RichTextLabel/fonts/normal_font = ExtResource("1_body_font")
+RichTextLabel/font_sizes/normal_font_size = 16

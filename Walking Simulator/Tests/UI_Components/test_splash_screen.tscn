@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1126dmohhb3o"]
+
+[ext_resource type="PackedScene" uid="uid://bh0qy7a2nbr1p" path="res://Scenes/SplashScreen/SplashScreen.tscn" id="1_splash"]
+
+[node name="TestSplashScreen" type="Node3D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SplashScreen" parent="UI" instance=ExtResource("1_splash")]
+
+[node name="Instructions" type="Label" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -80.0
+offset_right = 500.0
+offset_bottom = -10.0
+text = "Splash Screen Test
+Press any key or click to skip
+Fade in: 1s, Display: 3s, Fade out: 1s"

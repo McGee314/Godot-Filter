@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1dayur3bef5l"]
+
+[ext_resource type="Script" uid="uid://lox52bjhd0ww" path="res://Tests/PSX_Assets/test_psx_assets.gd" id="1_test"]
+
+[sub_resource type="Environment" id="1_env"]
+background_mode = 2
+background_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="PlaneMesh" id="2_plane"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="3_mat"]
+albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="TestPSXAssets" type="Node3D"]
+script = ExtResource("1_test")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 8, 8)
+fov = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("1_env")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, 0.25, 0.866025, 0.433012, 0.433012, -0.5, 0.75, 0, 4, 0)
+light_energy = 1.1
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("2_plane")
+surface_material_override/0 = SubResource("3_mat")

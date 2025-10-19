@@ -1,0 +1,341 @@
+[gd_scene load_steps=26 format=3 uid="uid://cfg0tlxaebwn6"]
+
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc84" path="res://Systems/Audio/CulturalAudioManager.tscn" id="2_audio"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc85" path="res://Systems/Inventory/CulturalInventory.tscn" id="3_inventory"]
+[ext_resource type="Script" uid="uid://cgryvux04l2la" path="res://Scenes/RegionSceneController.gd" id="4_controller"]
+[ext_resource type="Script" uid="uid://d18olnlnha4vn" path="res://Player Controller/PlayerControllerIntegrated.gd" id="5_integrated_player"]
+[ext_resource type="Script" uid="uid://cb82diggp6ccs" path="res://Systems/NPCs/CulturalNPC.gd" id="7_npc"]
+[ext_resource type="Script" uid="uid://dj2jvj2b7t8fh" path="res://Tests/Experimental_Papua_Scenes/Performance_Testing/PapuaScene_FPSDisplay.gd" id="11_fps_script"]
+[ext_resource type="Script" uid="uid://db48b5a3q2j7o" path="res://Player Controller/InteractionController.gd" id="12_interaction_controller"]
+[ext_resource type="Script" path="res://Systems/Terrain3D/Core/Terrain3DController.gd" id="13_terrain_controller"]
+[ext_resource type="Script" uid="uid://b2y2mbnr51v7l" path="res://Systems/Terrain3D/Core/Terrain3DInitializer.gd" id="14_terrain3d_initializer"]
+[ext_resource type="Script" uid="uid://s4enblkqdapk" path="res://Systems/Camera/SimpleCameraManager.gd" id="15_camera_manager"]
+[ext_resource type="Terrain3DAssets" uid="uid://dal3jhw6241qg" path="res://demo/data/assets.tres" id="16_terrain3d_assets"]
+
+[sub_resource type="Environment" id="Environment_papua"]
+background_mode = 1
+background_color = Color(0.5, 0.7, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.4, 0.6, 0.3, 1)
+ambient_light_energy = 0.4
+
+[sub_resource type="Gradient" id="Gradient_vr1m7"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d8lcj"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bov7h"]
+seamless = true
+color_ramp = SubResource("Gradient_vr1m7")
+noise = SubResource("FastNoiseLite_d8lcj")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_jrc01"]
+_shader_parameters = {
+"_mouse_layer": 2147483648,
+"auto_base_texture": 0,
+"auto_height_reduction": 0.0,
+"auto_overlay_texture": 1,
+"auto_slope": 1.0,
+"bias_distance": 512.0,
+"blend_sharpness": 0.87,
+"depth_blur": 0.0,
+"dual_scale_far": 170.0,
+"dual_scale_near": 100.0,
+"dual_scale_reduction": 0.3,
+"dual_scale_texture": 0,
+"enable_macro_variation": true,
+"enable_projection": true,
+"height_blending": true,
+"macro_variation1": Color(0.855, 0.8625, 0.9, 1),
+"macro_variation2": Color(0.9, 0.885, 0.81, 1),
+"macro_variation_slope": 0.333,
+"mipmap_bias": 1.0,
+"noise1_angle": 0.1,
+"noise1_offset": Vector2(0.5, 0.5),
+"noise1_scale": 0.04,
+"noise2_scale": 0.076,
+"noise3_scale": 0.225,
+"noise_texture": SubResource("NoiseTexture2D_bov7h"),
+"projection_angular_division": 1.0,
+"projection_threshold": 0.8,
+"tri_scale_reduction": 0.3,
+"world_noise_fragment_normals": false,
+"world_noise_height": 34.0,
+"world_noise_lod_distance": 7500.0,
+"world_noise_max_octaves": 4,
+"world_noise_min_octaves": 2,
+"world_noise_offset": Vector3(2.17, -1.225, 1.9),
+"world_noise_region_blend": 0.33,
+"world_noise_scale": 9.85,
+"world_space_normal_blend": true
+}
+world_background = 2
+auto_shader = true
+dual_scaling = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_player"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_white"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_npc"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orange"]
+albedo_color = Color(1, 0.5, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brown"]
+albedo_color = Color(0.6, 0.4, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_purple"]
+albedo_color = Color(0.8, 0.2, 0.8, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_green"]
+albedo_color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="PapuaScene_Terrain3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2315, 0, 76.0558)
+script = ExtResource("4_controller")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_papua")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, 0.25, 0.866025, 0.433012, 0.433012, -0.5, 0.75, 0, 15, 0)
+light_color = Color(1, 0.9, 0.7, 1)
+light_energy = 1.3
+
+[node name="Terrain3DManager" type="Node3D" parent="."]
+
+[node name="Terrain3D" type="Terrain3D" parent="Terrain3DManager"]
+data_directory = "res://demo/data"
+material = SubResource("Terrain3DMaterial_jrc01")
+assets = ExtResource("16_terrain3d_assets")
+collision_mask = 3
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 2
+script = ExtResource("5_integrated_player")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_player")
+surface_material_override/0 = SubResource("StandardMaterial3D_white")
+
+[node name="CameraPivot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraPivot"]
+spring_length = 6.0
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot/SpringArm3D"]
+near = 0.1
+far = 100.0
+
+[node name="InteractionController" type="RayCast3D" parent="Player"]
+collision_mask = 4
+script = ExtResource("12_interaction_controller")
+
+[node name="InteractionPrompt" type="Label" parent="Player/InteractionController"]
+text = "Press E to interact"
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="CulturalGuide" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+script = ExtResource("7_npc")
+npc_name = "Cultural Guide"
+npc_type = "guide"
+
+[node name="NPCCollision" type="CollisionShape3D" parent="NPCs/CulturalGuide"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="NPCMesh" type="MeshInstance3D" parent="NPCs/CulturalGuide"]
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_orange")
+
+[node name="Archaeologist" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 20)
+script = ExtResource("7_npc")
+npc_name = "Archaeologist"
+npc_type = "researcher"
+
+[node name="NPCCollision" type="CollisionShape3D" parent="NPCs/Archaeologist"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="NPCMesh" type="MeshInstance3D" parent="NPCs/Archaeologist"]
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_brown")
+
+[node name="TribalElder" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -10)
+script = ExtResource("7_npc")
+npc_name = "Tribal Elder"
+npc_type = "elder"
+
+[node name="NPCCollision" type="CollisionShape3D" parent="NPCs/TribalElder"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="NPCMesh" type="MeshInstance3D" parent="NPCs/TribalElder"]
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_purple")
+
+[node name="Artisan" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15)
+script = ExtResource("7_npc")
+npc_name = "Artisan"
+npc_type = "craftsman"
+
+[node name="NPCCollision" type="CollisionShape3D" parent="NPCs/Artisan"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="NPCMesh" type="MeshInstance3D" parent="NPCs/Artisan"]
+mesh = SubResource("BoxMesh_npc")
+surface_material_override/0 = SubResource("StandardMaterial3D_green")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CulturalInfoPanel" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NPCDialogueUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SimpleRadarSystem" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TerrainControls" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventorySystem" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DebugUI" type="CanvasLayer" parent="UI"]
+
+[node name="MovementDebug" type="Label" parent="UI/DebugUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = -20.0
+grow_vertical = 0
+text = "🎮 Controls:
+WASD - Move
+Mouse - Look around
+M - Toggle mouse mode
+Shift - Run
+Space - Jump
+ESC - Exit
+
+🌍 Terrain3D System Active
+F - Test Forest Generation
+C - Clear Assets
+T - Show Terrain Info
+R - Regenerate Terrain
+
+🏔️ Terrain Generation:
+(Keys 1,2,3,4 moved to Research class)
+
+🔷 Path System:
+5 - Hexagonal Path System
+   (Artifacts & NPCs at vertices)
+
+🔄 Terrain3D Controls:
+6 - Place Demo Rock Assets
+7 - Force Reload Terrain3D Data
+8 - Create Mountain Borders
+9 - Show Terrain3D Region Info
+
+Assets will snap to terrain height"
+vertical_alignment = 1
+
+[node name="FPSDisplay" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+script = ExtResource("11_fps_script")
+
+[node name="FPSLabel" type="Label" parent="UI/FPSDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FPS: --"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FPSUpdateTimer" type="Timer" parent="UI/FPSDisplay"]
+wait_time = 0.5
+autostart = true
+
+[node name="AudioManager" parent="." instance=ExtResource("2_audio")]
+
+[node name="InventoryManager" parent="." instance=ExtResource("3_inventory")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TerrainController" type="Node3D" parent="."]
+script = ExtResource("13_terrain_controller")
+
+[node name="Terrain3DInitializer" type="Node3D" parent="."]
+script = ExtResource("14_terrain3d_initializer")
+
+[node name="SimpleCameraManager" type="Node3D" parent="."]
+script = ExtResource("15_camera_manager")

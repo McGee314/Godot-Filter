@@ -1,0 +1,72 @@
+[2025-10-03T13:56:24] [INFO] Game Logger initialized - Log file: logs/game_log_2025-10-03T13-56-24.log
+[2025-10-03T13:56:24] [INFO] Log level updated to: 3
+[2025-10-03T13:56:24] [INFO] SplashScreen: ===== SPLASH SCREEN STARTING =====
+[2025-10-03T13:56:24] [INFO] SplashScreen: Animations setup complete
+[2025-10-03T13:56:24] [INFO] SplashScreen: Starting splash sequence
+[2025-10-03T13:56:28] [INFO] SplashScreen: Splash sequence completed
+[2025-10-03T13:56:29] [INFO] SplashScreen: Fade out completed, transitioning to main menu
+[2025-10-03T13:56:29] [INFO] SplashScreen: Transitioning to main menu: res://Scenes/MainMenu/MainMenu.tscn
+[2025-10-03T13:56:30] [INFO] SplashScreen: Successfully transitioned to main menu
+[2025-10-03T13:56:30] [INFO] 🚀 MainMenuController _ready() called
+[2025-10-03T13:56:30] [INFO] ℹ️ Exit Game button signal already connected
+[2025-10-03T13:56:30] [INFO] ✅ MainMenuController initialization completed
+[2025-10-03T13:56:37] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:56:37] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:56:37] [INFO] 🎭 Topeng Nusantara button pressed - navigating to mask selection
+[2025-10-03T13:56:38] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:56:38] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:56:39] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:56:39] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:12] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:12] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:13] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:13] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:13] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:14] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:17] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:17] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:17] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:17] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:18] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:18] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:26] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:26] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:27] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:27] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:27] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:27] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:40] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:40] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:52] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:53] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:53] [INFO] 🚀 MainMenuController _ready() called
+[2025-10-03T13:58:53] [INFO] ℹ️ Exit Game button signal already connected
+[2025-10-03T13:58:53] [INFO] ✅ MainMenuController initialization completed
+[2025-10-03T13:58:56] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:56] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:56] [INFO] 🎭 Topeng Nusantara button pressed - navigating to mask selection
+[2025-10-03T13:58:57] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:57] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:57] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:58:57] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:59:02] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:59:02] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:59:02] [INFO] 🚀 MainMenuController _ready() called
+[2025-10-03T13:59:02] [INFO] ℹ️ Exit Game button signal already connected
+[2025-10-03T13:59:02] [INFO] ✅ MainMenuController initialization completed
+[2025-10-03T13:59:03] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:59:03] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-10-03T13:59:03] [INFO] 🔘 Exit Game button pressed - showing unified confirmation dialog
+[2025-10-03T13:59:03] [INFO] 🔧 UnifiedExitDialog initialized
+[2025-10-03T13:59:03] [INFO] 🔧 Exit dialog configured for context: 2
+[2025-10-03T13:59:03] [INFO]    Source: Main Menu
+[2025-10-03T13:59:03] [INFO]    Target: 
+[2025-10-03T13:59:03] [INFO] 🖱️ Mouse mode set to VISIBLE for dialog interaction (was: 0)
+[2025-10-03T13:59:03] [INFO] ✅ Exit dialog shown for context: 2
+[2025-10-03T13:59:04] [INFO] ✅ User chose YES - executing exit action
+[2025-10-03T13:59:04] [INFO] 🚪 Quitting game...
+[2025-10-03T13:59:04] [INFO] Game Logger shutting down

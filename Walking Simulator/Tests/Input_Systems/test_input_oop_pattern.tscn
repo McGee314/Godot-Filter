@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://4bp73ilkelrq"]
+
+[ext_resource type="Script" uid="uid://b3ek35033hbfr" path="res://Tests/Input_Systems/test_input_oop_pattern.gd" id="1_test_script"]
+
+[node name="TestInputOOPPattern" type="Node2D"]
+script = ExtResource("1_test_script")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 600.0
+offset_bottom = 300.0
+text = "Testing BaseInputProcessor OOP Pattern
+
+1. Move mouse to test mouse motion handling
+2. Press ESC to test scene transition
+3. Check console for any !is_inside_tree() errors
+4. Verify input processing is consistent and safe
+
+The test will simulate multiple input processors
+and scene transitions to ensure the OOP pattern
+prevents all input-related errors."

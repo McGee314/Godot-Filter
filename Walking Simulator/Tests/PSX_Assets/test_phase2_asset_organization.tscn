@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyyxa6dipa2yr"]
+
+[ext_resource type="Script" uid="uid://b6xht02xngpe6" path="res://Tests/PSX_Assets/test_phase2_asset_organization.gd" id="1_test"]
+
+[node name="Phase2AssetOrganizationTest" type="Node"]
+script = ExtResource("1_test")

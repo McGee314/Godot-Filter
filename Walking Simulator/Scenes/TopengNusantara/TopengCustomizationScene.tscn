@@ -1,0 +1,226 @@
+[gd_scene load_steps=2 format=3 uid="uid://up5j8y84eets"]
+
+[ext_resource type="Script" path="res://Scenes/TopengNusantara/TopengCustomizationController.gd" id="1_controller"]
+
+[node name="TopengCustomization" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_controller")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.156863, 0.235294, 1)
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CustomizationContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="MainContainer/CustomizationContainer"]
+layout_mode = 2
+text = "KUSTOMISASI TOPENG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/CustomizationContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="BaseContainer" type="VBoxContainer" parent="MainContainer/CustomizationContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BaseLabel" type="Label" parent="MainContainer/CustomizationContainer/BaseContainer"]
+layout_mode = 2
+text = "Pilih Base"
+
+[node name="BaseOptionsContainer" type="HBoxContainer" parent="MainContainer/CustomizationContainer/BaseContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BaseNoneButton" type="Button" parent="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "None"
+
+[node name="Base1Button" type="Button" parent="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Base 1"
+
+[node name="Base2Button" type="Button" parent="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Base 2"
+
+[node name="Base3Button" type="Button" parent="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Base 3"
+
+[node name="MataContainer" type="VBoxContainer" parent="MainContainer/CustomizationContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MataLabel" type="Label" parent="MainContainer/CustomizationContainer/MataContainer"]
+layout_mode = 2
+text = "Pilih Mata"
+
+[node name="MataOptionsContainer" type="HBoxContainer" parent="MainContainer/CustomizationContainer/MataContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MataNoneButton" type="Button" parent="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "None"
+
+[node name="Mata1Button" type="Button" parent="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mata 1"
+
+[node name="Mata2Button" type="Button" parent="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mata 2"
+
+[node name="Mata3Button" type="Button" parent="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mata 3"
+
+[node name="MulutContainer" type="VBoxContainer" parent="MainContainer/CustomizationContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MulutLabel" type="Label" parent="MainContainer/CustomizationContainer/MulutContainer"]
+layout_mode = 2
+text = "Pilih Mulut"
+
+[node name="MulutOptionsContainer" type="HBoxContainer" parent="MainContainer/CustomizationContainer/MulutContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MulutNoneButton" type="Button" parent="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "None"
+
+[node name="Mulut1Button" type="Button" parent="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mulut 1"
+
+[node name="Mulut2Button" type="Button" parent="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mulut 2"
+
+[node name="Mulut3Button" type="Button" parent="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mulut 3"
+
+[node name="HSeparator2" type="HSeparator" parent="MainContainer/CustomizationContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MainContainer/CustomizationContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PilihButton" type="Button" parent="MainContainer/CustomizationContainer/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Pilih"
+
+[node name="BackButton" type="Button" parent="MainContainer/CustomizationContainer/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Kembali"
+
+[node name="PreviewContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PreviewLabel" type="Label" parent="MainContainer/PreviewContainer"]
+layout_mode = 2
+text = "Preview"
+horizontal_alignment = 1
+
+[node name="PreviewPanel" type="Panel" parent="MainContainer/PreviewContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PreviewDisplay" type="ColorRect" parent="MainContainer/PreviewContainer/PreviewPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7, 0.7, 0.7, 1)
+
+[node name="PreviewText" type="Label" parent="MainContainer/PreviewContainer/PreviewPanel/PreviewDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pratinjau Topeng
+Akan ditampilkan di sini"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer/BaseNoneButton" to="." method="_on_base_button_pressed" binds= [0]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer/Base1Button" to="." method="_on_base_button_pressed" binds= [1]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer/Base2Button" to="." method="_on_base_button_pressed" binds= [2]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/BaseContainer/BaseOptionsContainer/Base3Button" to="." method="_on_base_button_pressed" binds= [3]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer/MataNoneButton" to="." method="_on_mata_button_pressed" binds= [0]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer/Mata1Button" to="." method="_on_mata_button_pressed" binds= [1]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer/Mata2Button" to="." method="_on_mata_button_pressed" binds= [2]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MataContainer/MataOptionsContainer/Mata3Button" to="." method="_on_mata_button_pressed" binds= [3]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer/MulutNoneButton" to="." method="_on_mulut_button_pressed" binds= [0]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer/Mulut1Button" to="." method="_on_mulut_button_pressed" binds= [1]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer/Mulut2Button" to="." method="_on_mulut_button_pressed" binds= [2]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/MulutContainer/MulutOptionsContainer/Mulut3Button" to="." method="_on_mulut_button_pressed" binds= [3]]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/ButtonContainer/PilihButton" to="." method="_on_pilih_button_pressed"]
+[connection signal="pressed" from="MainContainer/CustomizationContainer/ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]

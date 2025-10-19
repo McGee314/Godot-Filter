@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="BaseGraphConfig" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Systems/Terrain3D/GraphSystem/BaseGraphConfig.gd" id="1"]
+[ext_resource type="Script" path="res://Systems/Terrain3D/GraphSystem/GraphVertexConfig.gd" id="2"]
+
+[sub_resource type="Resource" id="GraphVertexConfig_1"]
+script = ExtResource("2")
+place_objects = true
+object_types = Array[int]([0, 1, 2])
+spawn_probability = 0.8
+max_objects_per_vertex = 1
+object_scale = Vector3(1.0, 1.0, 1.0)
+scale_variation = 0.1
+rotation_random = true
+rotation_range = 360.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian"])
+scene_specific = false
+
+[resource]
+script = ExtResource("1")
+center_position = Vector3(0, 0, 0)
+radius = 15.0
+vertex_count = 3
+path_width = 2.5
+path_height = 0.2
+path_color = Color(0.5, 0.3, 0.2, 1)
+follow_terrain_height = true
+height_offset = 0.1
+terrain_conforming = true
+vertex_config = SubResource("GraphVertexConfig_1")
+collision_enabled = true
+collision_height = 2.0
+debug_visualization = false

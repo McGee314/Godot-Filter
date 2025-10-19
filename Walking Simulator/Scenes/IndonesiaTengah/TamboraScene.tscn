@@ -1,0 +1,216 @@
+[gd_scene load_steps=17 format=3 uid="uid://c8is2r5ftgda0"]
+
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc84" path="res://Systems/Audio/CulturalAudioManager.tscn" id="2_audio"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgc85" path="res://Systems/Inventory/CulturalInventory.tscn" id="3_inventory"]
+[ext_resource type="Script" uid="uid://cgryvux04l2la" path="res://Scenes/RegionSceneController.gd" id="4_controller"]
+[ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="5_player"]
+[ext_resource type="Script" uid="uid://dqlmkipeygx7s" path="res://Systems/Items/WorldCulturalItem.gd" id="6_world_item"]
+[ext_resource type="Script" uid="uid://cb82diggp6ccs" path="res://Systems/NPCs/CulturalNPC.gd" id="7_npc"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdab" path="res://Systems/UI/CulturalInfoPanel.tscn" id="8_info_panel"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdac" path="res://Systems/UI/NPCDialogueUI.tscn" id="9_dialogue_ui"]
+[ext_resource type="PackedScene" uid="uid://s1tfkx30tsbp" path="res://Systems/UI/SimpleRadarSystem.tscn" id="10_radar"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+albedo_color = Color(0.6, 0.5, 0.4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2"]
+albedo_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mountain"]
+height = 20.0
+radius = 15.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3"]
+albedo_color = Color(0.8, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_interaction"]
+radius = 2.0
+
+[node name="TamboraScene" type="Node3D"]
+script = ExtResource("4_controller")
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 5)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Environment"]
+size = Vector3(60, 1, 60)
+material = SubResource("StandardMaterial3D_1")
+
+[node name="GroundCollision" type="StaticBody3D" parent="Environment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/GroundCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_ground")
+
+[node name="Mountain" type="CSGCylinder3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -20)
+radius = 15.0
+height = 20.0
+material = SubResource("StandardMaterial3D_2")
+
+[node name="MountainCollision" type="StaticBody3D" parent="Environment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MountainCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -20)
+shape = SubResource("CylinderShape3D_mountain")
+
+[node name="MountainPath" type="Node3D" parent="Environment"]
+
+[node name="Path1" type="CSGBox3D" parent="Environment/MountainPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -10)
+size = Vector3(3, 0.2, 20)
+
+[node name="Path2" type="CSGBox3D" parent="Environment/MountainPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+size = Vector3(3, 0.2, 15)
+
+[node name="Path3" type="CSGBox3D" parent="Environment/MountainPath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+size = Vector3(3, 0.2, 10)
+
+[node name="HistoricalMarkers" type="Node3D" parent="Environment"]
+
+[node name="Marker1" type="CSGCylinder3D" parent="Environment/HistoricalMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15)
+material = SubResource("StandardMaterial3D_3")
+
+[node name="Marker2" type="CSGCylinder3D" parent="Environment/HistoricalMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -8)
+material = SubResource("StandardMaterial3D_3")
+
+[node name="Marker3" type="CSGCylinder3D" parent="Environment/HistoricalMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2)
+material = SubResource("StandardMaterial3D_3")
+
+[node name="CulturalArtifacts" type="Node3D" parent="."]
+
+[node name="TamboraRockSample" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -12)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "TamboraRockSample"
+cultural_region = "Indonesia Tengah"
+
+[node name="HistoricalDocument" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -12)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "HistoricalDocument"
+cultural_region = "Indonesia Tengah"
+
+[node name="EruptionTimeline" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -5)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "EruptionTimeline"
+cultural_region = "Indonesia Tengah"
+
+[node name="ClimateImpact" type="CSGCylinder3D" parent="CulturalArtifacts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -5)
+radius = 0.4
+height = 0.3
+material = SubResource("StandardMaterial3D_2")
+script = ExtResource("6_world_item")
+item_name = "ClimateImpact"
+cultural_region = "Indonesia Tengah"
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="Historian" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("7_npc")
+npc_name = "Historian"
+cultural_region = "Indonesia Tengah"
+npc_type = "Historian"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/Historian"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/Historian"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Historian/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/Historian"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Historian/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Geologist" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -8)
+script = ExtResource("7_npc")
+npc_name = "Geologist"
+cultural_region = "Indonesia Tengah"
+npc_type = "Historian"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/Geologist"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/Geologist"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Geologist/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/Geologist"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Geologist/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="LocalGuide" type="Node3D" parent="NPCs" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -8)
+script = ExtResource("7_npc")
+npc_name = "LocalGuide"
+cultural_region = "Indonesia Tengah"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="NPCs/LocalGuide"]
+material = SubResource("StandardMaterial3D_3")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="NPCs/LocalGuide"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/LocalGuide/NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="NPCs/LocalGuide"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/LocalGuide/InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 10, 0)
+light_energy = 1.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CulturalInventory" parent="UI" instance=ExtResource("3_inventory")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CulturalInfoPanel" parent="UI" instance=ExtResource("8_info_panel")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NPCDialogueUI" parent="UI" instance=ExtResource("9_dialogue_ui")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RadarSystem" parent="UI" instance=ExtResource("10_radar")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioManager" parent="." instance=ExtResource("2_audio")]

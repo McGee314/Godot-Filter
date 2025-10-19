@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgda8"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Ancient Tool"
+max_stack_size = 1
+cultural_region = "Indonesia Timur"
+historical_period = "Prehistoric"
+cultural_significance = "Ancient tools from Papua provide insights into early human settlement and technological development in the region."
+description = "A stone tool from prehistoric Papua, showing early human adaptation and survival techniques in the Indonesian archipelago."
+educational_value = 3
+rarity = "Uncommon"

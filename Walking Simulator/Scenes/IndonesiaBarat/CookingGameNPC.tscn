@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbjoptqqjkgkw"]
+
+[ext_resource type="Script" uid="uid://cfqshcad11v5h" path="res://Systems/NPCs/CookingGameNPC.gd" id="1_controller"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+albedo_color = Color(0.8, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npc"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_interaction"]
+radius = 2.0
+
+[node name="CookingGameNPC" type="Node3D" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_controller")
+npc_name = "Chef Jakarta"
+cultural_region = "Indonesia Barat"
+npc_type = "Cooking Instructor"
+
+[node name="NPCModel" type="CSGCylinder3D" parent="."]
+material = SubResource("StandardMaterial3D_1")
+
+[node name="NPCCollision" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCCollision"]
+shape = SubResource("BoxShape3D_npc")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_interaction")

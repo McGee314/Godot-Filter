@@ -1,0 +1,76 @@
+[gd_resource type="WheelGraphPathConfig" script_class="WheelGraphPathConfig" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Systems/Terrain3D/PathSystem/WheelGraphPathConfig.gd" id="1"]
+[ext_resource type="Script" path="res://Systems/Terrain3D/PathSystem/VertexConfig.gd" id="2"]
+
+[sub_resource type="VertexConfig" id="VertexConfig_hub"]
+script = ExtResource("2")
+place_objects = true
+object_types = Array[int]([0, 1])
+spawn_probability = 1.0
+max_objects_per_vertex = 1
+object_scale = Vector3(1.5, 1.5, 1.5)
+scale_variation = 0.0
+rotation_random = false
+rotation_range = 0.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian", "Ceremonial"])
+scene_specific = true
+
+[sub_resource type="VertexConfig" id="VertexConfig_outer"]
+script = ExtResource("2")
+place_objects = true
+object_types = Array[int]([0, 1, 2, 3, 4])
+spawn_probability = 0.9
+max_objects_per_vertex = 3
+object_scale = Vector3(0.9, 0.9, 0.9)
+scale_variation = 0.3
+rotation_random = true
+rotation_range = 360.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian", "Ceremonial"])
+scene_specific = true
+
+[sub_resource type="VertexConfig" id="VertexConfig_inner"]
+script = ExtResource("2")
+place_objects = true
+object_types = Array[int]([2, 3])
+spawn_probability = 0.6
+max_objects_per_vertex = 1
+object_scale = Vector3(0.7, 0.7, 0.7)
+scale_variation = 0.15
+rotation_random = true
+rotation_range = 180.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian", "Ceremonial"])
+scene_specific = false
+
+[resource]
+script = ExtResource("1")
+wheel_type = 8
+hub_center = Vector3(0, 0, 0)
+outer_radius = 40.0
+inner_radius = 15.0
+create_spokes = true
+create_outer_ring = true
+path_width = 5.0
+path_height = 0.4
+collision_enabled = true
+collision_layer = 1
+hub_vertex_config = SubResource("VertexConfig_hub")
+outer_vertex_config = SubResource("VertexConfig_outer")
+inner_vertex_config = SubResource("VertexConfig_inner")
+follow_terrain_height = true
+height_offset = 0.2
+terrain_conforming = true
+smooth_height_transitions = true
+terrain_sampling_precision = 0.6
+scene_type = 0
+cultural_theme = "Ceremonial"
+randomize_rotation = false
+rotation_offset = 22.5
+debug_mode = false
+show_vertex_markers = true
+marker_color = Color(1, 0.8, 0, 1)
+path_color = Color(0.8, 0.6, 0.4, 1)
+

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dowv3yv16n33p"]
+
+[ext_resource type="PackedScene" uid="uid://bqxvn8yqxqxqx" path="res://Tests/PSX_Assets/test_format_comparison.tscn" id="1_radar"]
+
+[node name="TestRadar" type="Node"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RadarSystem" parent="UI" instance=ExtResource("1_radar")]
+grow_horizontal = 0

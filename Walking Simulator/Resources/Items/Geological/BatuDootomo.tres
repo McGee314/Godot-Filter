@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgc83"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Batu Dootomo"
+max_stack_size = 1
+cultural_region = "Indonesia Timur"
+historical_period = "Ancient"
+cultural_significance = "The Batu Dootomo is a sacred stone artifact found in Papua's megalithic sites, representing ancient spiritual beliefs."
+description = "A sacred stone artifact from Papua's megalithic sites, believed to have spiritual significance in ancient tribal ceremonies."
+educational_value = 5
+rarity = "Rare"

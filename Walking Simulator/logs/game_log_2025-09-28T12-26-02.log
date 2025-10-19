@@ -1,0 +1,28 @@
+[2025-09-28T12:26:02] [INFO] Game Logger initialized - Log file: logs/game_log_2025-09-28T12-26-02.log
+[2025-09-28T12:26:02] [INFO] Log level updated to: 3
+[2025-09-28T12:26:02] [INFO] SplashScreen: ===== SPLASH SCREEN STARTING =====
+[2025-09-28T12:26:02] [INFO] SplashScreen: Animations setup complete
+[2025-09-28T12:26:02] [INFO] SplashScreen: Starting splash sequence
+[2025-09-28T12:26:04] [INFO] SplashScreen: Splash screen skipped by user input
+[2025-09-28T12:26:04] [INFO] SplashScreen: Transitioning to main menu: res://Scenes/MainMenu/MainMenu.tscn
+[2025-09-28T12:26:04] [INFO] SplashScreen: Successfully transitioned to main menu
+[2025-09-28T12:26:04] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:04] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T12:26:04] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T12:26:04] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T12:26:04] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:10] [DEBUG] [InputDebug] _input: key phys=4194328, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:12] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:12] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:12] [INFO] 🔍 Ethnicity Detection button pressed - navigating to ethnicity detection
+[2025-09-28T12:26:14] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:14] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:14] [INFO] 🚀 MainMenuController _ready() called
+[2025-09-28T12:26:14] [INFO] ℹ️ Exit Game button signal already connected
+[2025-09-28T12:26:14] [INFO] ✅ MainMenuController initialization completed
+[2025-09-28T12:26:15] [DEBUG] [InputDebug] _input: key phys=4194328, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:31] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:32] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:32] [INFO] 🔍 Ethnicity Detection button pressed - navigating to ethnicity detection
+[2025-09-28T12:26:42] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-09-28T12:26:42] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false

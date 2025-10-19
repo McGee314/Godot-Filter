@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b63ldg0a0i3do"]
+
+[ext_resource type="Script" uid="uid://dsthtdi6d7byg" path="res://Scenes/MainMenu/POIMarker.gd" id="1_controller"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_marker"]
+albedo_color = Color(1, 0.2, 0.2, 1)
+metallic = 0.1
+roughness = 0.3
+emission_enabled = true
+emission = Color(1, 0.2, 0.2, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_marker"]
+radius = 0.25
+height = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_interact"]
+radius = 0.35
+
+[node name="POIMarker" type="Node3D"]
+script = ExtResource("1_controller")
+
+[node name="MarkerMesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_marker")
+mesh = SubResource("SphereMesh_marker")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("SphereShape3D_interact")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+billboard = 1
+font_size = 16
+outline_size = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

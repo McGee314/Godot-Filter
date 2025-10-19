@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="WheelGraphConfig" load_steps=4 format=3 uid="uid://pentagon_wheel_graph_config"]
+
+[ext_resource type="Script" path="res://Systems/Terrain3D/GraphSystem/WheelGraphConfig.gd" id="1_wheel_config"]
+[ext_resource type="Script" path="res://Systems/Terrain3D/GraphSystem/GraphVertexConfig.gd" id="2_vertex_config"]
+
+[sub_resource type="Resource" id="GraphVertexConfig_hub"]
+script = ExtResource("2_vertex_config")
+place_objects = true
+object_types = Array[int]([0, 1])
+spawn_probability = 1.0
+max_objects_per_vertex = 1
+object_scale = Vector3(1.4, 1.4, 1.4)
+scale_variation = 0.0
+rotation_random = true
+rotation_range = 360.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian", "Sacred"])
+scene_specific = true
+
+[sub_resource type="Resource" id="GraphVertexConfig_outer"]
+script = ExtResource("2_vertex_config")
+place_objects = true
+object_types = Array[int]([0, 1, 2])
+spawn_probability = 0.85
+max_objects_per_vertex = 1
+object_scale = Vector3(1.15, 1.15, 1.15)
+scale_variation = 0.12
+rotation_random = true
+rotation_range = 360.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian"])
+scene_specific = false
+
+[resource]
+script = ExtResource("1_wheel_config")
+center_position = Vector3(0, 0, 0)
+radius = 22.0
+vertex_count = 5
+path_width = 2.8
+path_height = 0.2
+path_color = Color(0.5, 0.3, 0.2, 1)
+follow_terrain = true
+terrain_offset = 0.1
+add_collision = true
+collision_layer = 1
+collision_mask = 1
+vertex_config = SubResource("GraphVertexConfig_outer")
+debug_enabled = true
+debug_vertex_markers = true
+debug_path_info = true
+debug_generation_steps = true
+wheel_type = 5
+create_spokes = true
+create_outer_ring = true
+inner_radius = 4.0
+hub_height = 0.4
+spoke_width = 2.5
+ring_width = 2.8
+hub_vertex_config = SubResource("GraphVertexConfig_hub")

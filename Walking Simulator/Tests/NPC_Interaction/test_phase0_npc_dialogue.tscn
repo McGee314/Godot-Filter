@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://btllf82rhgvd4"]
+
+[ext_resource type="Script" uid="uid://cb82diggp6ccs" path="res://Systems/NPCs/CulturalNPC.gd" id="1_npc"]
+[ext_resource type="PackedScene" uid="uid://c8is2r5ftgdac" path="res://Systems/UI/NPCDialogueUI.tscn" id="2_dialogue_ui"]
+
+[node name="TestPhase0NPCDialogue" type="Node"]
+
+[node name="NPC" type="Node3D" parent="."]
+script = ExtResource("1_npc")
+
+[node name="NPCDialogueUI" parent="." instance=ExtResource("2_dialogue_ui")]
+grow_horizontal = 2
+grow_vertical = 2

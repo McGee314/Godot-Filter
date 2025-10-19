@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8is2r5ftgc84"]
+
+[ext_resource type="Script" uid="uid://cxh2p748lh32e" path="res://Systems/Audio/CulturalAudioManager.gd" id="1_audio"]
+
+[node name="CulturalAudioManager" type="Node"]
+script = ExtResource("1_audio")
+
+[node name="AmbientPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="EffectPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0

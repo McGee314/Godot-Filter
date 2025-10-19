@@ -1,0 +1,60 @@
+[gd_resource type="WheelGraphPathConfig" script_class="WheelGraphPathConfig" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Systems/Terrain3D/PathSystem/WheelGraphPathConfig.gd" id="1"]
+[ext_resource type="Script" path="res://Systems/Terrain3D/PathSystem/VertexConfig.gd" id="2"]
+
+[sub_resource type="VertexConfig" id="VertexConfig_hub"]
+script = ExtResource("2")
+place_objects = true
+object_types = Array[int]([0, 1])
+spawn_probability = 1.0
+max_objects_per_vertex = 1
+object_scale = Vector3(1, 1, 1)
+scale_variation = 0.0
+rotation_random = false
+rotation_range = 0.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian"])
+scene_specific = false
+
+[sub_resource type="VertexConfig" id="VertexConfig_outer"]
+script = ExtResource("2")
+place_objects = true
+object_types = Array[int]([0, 2, 3])
+spawn_probability = 0.75
+max_objects_per_vertex = 1
+object_scale = Vector3(1, 1, 1)
+scale_variation = 0.1
+rotation_random = true
+rotation_range = 90.0
+height_offset = 0.0
+cultural_filter = Array[String](["Indonesian"])
+scene_specific = false
+
+[resource]
+script = ExtResource("1")
+wheel_type = 4
+hub_center = Vector3(0, 0, 0)
+outer_radius = 20.0
+inner_radius = 0.0
+create_spokes = true
+create_outer_ring = true
+path_width = 3.5
+path_height = 0.25
+collision_enabled = true
+collision_layer = 1
+hub_vertex_config = SubResource("VertexConfig_hub")
+outer_vertex_config = SubResource("VertexConfig_outer")
+follow_terrain_height = true
+height_offset = 0.12
+terrain_conforming = true
+smooth_height_transitions = true
+terrain_sampling_precision = 1.0
+scene_type = 0
+cultural_theme = "Indonesian"
+randomize_rotation = false
+rotation_offset = 45.0
+debug_mode = false
+show_vertex_markers = true
+marker_color = Color(1, 0.5, 0, 1)
+path_color = Color(0.5, 0.5, 0.5, 1)

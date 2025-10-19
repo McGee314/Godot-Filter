@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CulturalItem" load_steps=2 format=3 uid="uid://c8is2r5ftgda4"]
+
+[ext_resource type="Script" uid="uid://b86gaff4pbrea" path="res://Systems/Items/CulturalItem.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Climate Impact Study"
+max_stack_size = 1
+cultural_region = "Indonesia Tengah"
+historical_period = "1815-1816"
+cultural_significance = "The climate impact study shows how the Tambora eruption caused the 'Year Without a Summer' and affected global agriculture."
+description = "A scientific study documenting the global climate changes caused by the 1815 Tambora eruption and their lasting effects."
+educational_value = 4
+rarity = "Rare"

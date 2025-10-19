@@ -1,0 +1,129 @@
+[gd_scene load_steps=2 format=3 uid="uid://s1tfkx30tsbp"]
+
+[ext_resource type="Script" uid="uid://b56m1vg2p8tbm" path="res://Systems/UI/SimpleRadarSystem.gd" id="1_simple_radar"]
+
+[node name="SimpleRadarSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 240.0
+script = ExtResource("1_simple_radar")
+
+[node name="RadarBorder" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -102.0
+offset_right = 102.0
+offset_bottom = 102.0
+color = Color(1, 0.5, 1, 0.8)
+
+[node name="RadarCircle" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="NorthIndicator" type="Label" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 10.0
+offset_right = 108.0
+offset_bottom = 26.0
+text = "N"
+horizontal_alignment = 1
+
+[node name="PlayerIcon" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+
+[node name="POIContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PathContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Legend" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 150.0
+
+[node name="LegendTitle" type="Label" parent="Legend"]
+layout_mode = 2
+text = "Legend"
+horizontal_alignment = 1
+
+[node name="PlayerLegend" type="HBoxContainer" parent="Legend"]
+layout_mode = 2
+
+[node name="PlayerIcon" type="Control" parent="Legend/PlayerLegend"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="PlayerLabel" type="Label" parent="Legend/PlayerLegend"]
+layout_mode = 2
+text = "Player"
+
+[node name="NPCLegend" type="HBoxContainer" parent="Legend"]
+layout_mode = 2
+
+[node name="NPCIcon" type="Control" parent="Legend/NPCLegend"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="NPCLabel" type="Label" parent="Legend/NPCLegend"]
+layout_mode = 2
+text = "NPCs"
+
+[node name="POILegend" type="HBoxContainer" parent="Legend"]
+layout_mode = 2
+
+[node name="POIIcon" type="Control" parent="Legend/POILegend"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="POILabel" type="Label" parent="Legend/POILegend"]
+layout_mode = 2
+text = "POIs"
+
+[node name="ArtifactLegend" type="HBoxContainer" parent="Legend"]
+layout_mode = 2
+
+[node name="ArtifactIcon" type="Control" parent="Legend/ArtifactLegend"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="ArtifactLabel" type="Label" parent="Legend/ArtifactLegend"]
+layout_mode = 2
+text = "Artifacts"

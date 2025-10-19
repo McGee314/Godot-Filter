@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://git4ga68e81l"]
+
+[ext_resource type="PackedScene" uid="uid://cf1pwgl0y0mi6" path="res://Player Controller/Player.tscn" id="1_player"]
+[ext_resource type="Script" uid="uid://c4jg6f20yfh2x" path="res://Player Controller/InteractableObject.gd" id="2_interactable"]
+
+[node name="TestPhase0Interaction" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+
+[node name="Interactable" type="Node3D" parent="."]
+script = ExtResource("2_interactable")
