@@ -1,0 +1,25 @@
+# Ignore Python virtual environments
+# If your venv is inside the Web_server folder, keep the path below.
+venv/
+Web_server/venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Others
+*.log
+Web_server/venv
