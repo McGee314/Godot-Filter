@@ -1,0 +1,78 @@
+[2025-11-03T09:48:03] [INFO] Game Logger initialized - Log file: logs/game_log_2025-11-03T09-48-03.log
+[2025-11-03T09:48:03] [INFO] Log level updated to: 3
+[2025-11-03T09:48:03] [INFO] SplashScreen: ===== SPLASH SCREEN STARTING =====
+[2025-11-03T09:48:03] [INFO] SplashScreen: Animations setup complete
+[2025-11-03T09:48:03] [INFO] SplashScreen: Starting splash sequence
+[2025-11-03T09:48:08] [INFO] SplashScreen: Splash sequence completed
+[2025-11-03T09:48:09] [INFO] SplashScreen: Fade out completed, transitioning to main menu
+[2025-11-03T09:48:09] [INFO] SplashScreen: Transitioning to main menu: res://Scenes/MainMenu/MainMenu.tscn
+[2025-11-03T09:48:09] [INFO] SplashScreen: Successfully transitioned to main menu
+[2025-11-03T09:48:09] [INFO] 🚀 MainMenuController _ready() called
+[2025-11-03T09:48:09] [INFO] ℹ️ Exit Game button signal already connected
+[2025-11-03T09:48:09] [INFO] ✅ MainMenuController initialization completed
+[2025-11-03T09:48:56] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:48:56] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:48:56] [INFO] 🔍 Ethnicity Detection button pressed - navigating to ethnicity detection
+[2025-11-03T09:48:57] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:48:58] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:49:13] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:49:13] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:49:58] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:50:14] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:50:14] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:41] [INFO] 🚀 MainMenuController _ready() called
+[2025-11-03T09:54:41] [INFO] ℹ️ Exit Game button signal already connected
+[2025-11-03T09:54:41] [INFO] ✅ MainMenuController initialization completed
+[2025-11-03T09:54:42] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:42] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:42] [INFO] 🔍 Ethnicity Detection button pressed - navigating to ethnicity detection
+[2025-11-03T09:54:43] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:44] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:44] [INFO] 🚀 MainMenuController _ready() called
+[2025-11-03T09:54:44] [INFO] ℹ️ Exit Game button signal already connected
+[2025-11-03T09:54:44] [INFO] ✅ MainMenuController initialization completed
+[2025-11-03T09:54:46] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:46] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:46] [INFO] 🎭 Topeng Nusantara button pressed - navigating to mask selection
+[2025-11-03T09:54:47] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:47] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:48] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:48] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:49] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:49] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:50] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:50] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:51] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:51] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:54] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T09:54:54] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:00:39] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:00:39] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:00:40] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:00:40] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:00:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:00:41] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:08] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:08] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:09] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:09] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:10] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:10] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:11] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:11] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:12] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:12] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:14] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:14] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:15] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:15] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:16] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:16] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:21] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:21] [DEBUG] [InputDebug] _input: mouse btn=1, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:21] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=true, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:22] [DEBUG] [InputDebug] _input: key phys=81, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:22] [DEBUG] [InputDebug] _input: key phys=4194327, pressed=false, is_in_game_scene=false, transitioning=false
+[2025-11-03T10:01:22] [INFO] Game Logger shutting down
